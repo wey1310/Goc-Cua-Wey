@@ -588,25 +588,25 @@ fadeIn .6s ease .35s both;
 
     .likeContainer{
 
-        top:17%;
+        top:15%;
 
-        right:22%;
+        right:30%;
 
     }
 
     .likeLeaf{
 
-        width:22px;
+        width:10px;
 
     }
 
     .likeCounter{
 
-        width:15px;
+        width:10px;
 
-        height:20px;
+        height:10px;
 
-        font-size:8px;
+        font-size:5px;
 
     }
 

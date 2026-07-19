@@ -212,7 +212,7 @@ rgba(255,240,180,.18)
 
 .characterName{
 
-    margin: 0rem;
+    margin:0;
 
     color:#080808;
 
@@ -220,13 +220,13 @@ rgba(255,240,180,.18)
 
     font-weight:700;
 
-    font-size:calc(1.5em * var(--scale));
+    font-size:clamp(1rem,2vw,1.5rem);
 
-    line-height:1.5;
+    line-height:1.35;
 
     animation:
 
-fadeIn .45s ease .15s both;
+    fadeIn .45s ease .15s both;
 
 }
 
@@ -238,9 +238,9 @@ fadeIn .45s ease .15s both;
 
     font-weight:500;
 
-    font-size:calc(.60em * var(--scale));
+    font-size:clamp(.5rem,.9vw,.68rem);
 
-    line-height:1;
+    line-height:1.2;
 
 }
 
@@ -264,7 +264,7 @@ fadeIn .45s ease .15s both;
 
     text-align:center;
 
-    font-size:calc(.95em * var(--scale));
+    font-size:clamp(.55rem,1vw,.7rem);
 
     line-height:1.3;
 
@@ -366,7 +366,7 @@ fadeIn .6s ease .2s both;
 
     overflow-wrap:anywhere;
 
-    font-size:calc(.60em * var(--scale));
+    font-size:clamp(.55rem,1vw,.72rem);
 
 }
 

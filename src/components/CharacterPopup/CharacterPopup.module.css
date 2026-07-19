@@ -584,39 +584,41 @@ fadeIn .6s ease .35s both;
 
         --scale:.78;
 
+    }
+
     .likeContainer{
 
-    top:8%;
+        top:8%;
 
-    right:12%;
+        right:12%;
 
-}
+    }
 
-.likeLeaf{
+    .likeLeaf{
 
-    width:42px;
+        width:42px;
 
-}
+    }
 
-.likeCounter{
+    .likeCounter{
 
-    width:34px;
+        width:34px;
 
-    height:20px;
+        height:20px;
 
-    font-size:12px;
+        font-size:12px;
 
-}
+    }
 
-.feedbackContainer{
+    .feedbackContainer{
 
-    top:8%;
+        position:absolute;
 
-    right:0;
+        top:90%;
 
-    width:90px;
+        right:-60%;
 
-}
+        width:90px;
 
     }
 

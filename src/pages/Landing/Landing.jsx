@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { ADMIN_PASSWORD, FACEBOOK_LINK } from "../../config/admin";
+import { ADMIN_PASSWORD, FACEBOOK_LINK } from "../../config/Admin";
 
-import landingSecret from "../../assets/UI/landing-secret.png";
-import landingFB from "../../assets/UI/landing-linkingfb.png";
+import landingSecret from "../../assets/ui/landing-secret.png";
+import landingFB from "../../assets/ui/landing-linkingfb.png";
 
 import styles from "./Landing.module.css";
 
-import heading from "../../assets/UI/landing-heading.png";
-import enterBtn from "../../assets/UI/landing-enter.png";
-import quote from "../../assets/UI/landing-quote-box.png";
+import heading from "../../assets/ui/landing-heading.png";
+import enterBtn from "../../assets/ui/landing-enter.png";
+import quote from "../../assets/ui/landing-quote-box.png";
 import wey from "../../assets/character/landing-wey.png";
 import leaves from "../../assets/effect/leaves..gif";
 

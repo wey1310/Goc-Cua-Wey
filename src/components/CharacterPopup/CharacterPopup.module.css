@@ -366,7 +366,7 @@ fadeIn .6s ease .2s both;
 
     overflow-wrap:anywhere;
 
-    font-size:clamp(.55rem,1vw,.72rem);
+    font-size:clamp(.50rem,1vw,.70rem);
 
 }
 

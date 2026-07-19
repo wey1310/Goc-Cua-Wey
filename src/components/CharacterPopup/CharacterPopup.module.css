@@ -594,14 +594,14 @@ fadeIn .6s ease .35s both;
 
     .likeLeaf{
 
-        width:10px;          /* ⭐ Kích thước icon lá tim */
+        width:6px;          /* ⭐ Kích thước icon lá tim */
 
     }
 
     .likeCounter{
 
-        width:34px;          /* ⭐ Chiều rộng ô số */
-        height:20px;         /* ⭐ Chiều cao ô số */
+        width:25px;          /* ⭐ Chiều rộng ô số */
+        height: 10px;         /* ⭐ Chiều cao ô số */
         font-size:5px;      /* ⭐ Cỡ chữ số tim */
 
     }

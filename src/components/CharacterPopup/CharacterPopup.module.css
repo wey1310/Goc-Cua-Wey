@@ -597,7 +597,7 @@ fadeIn .6s ease .35s both;
 
     .likeLeaf{
 
-        width:3px;          /* ⭐ Kích thước icon lá tim */
+        width:2px;          /* ⭐ Kích thước icon lá tim */
 
     }
 
@@ -615,7 +615,7 @@ fadeIn .6s ease .35s both;
 
     right:15%;
 
-    width:50px;
+    width:25px;
 
 }
 

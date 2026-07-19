@@ -584,6 +584,40 @@ fadeIn .6s ease .35s both;
 
         --scale:.78;
 
+    .likeContainer{
+
+    top:8%;
+
+    right:12%;
+
+}
+
+.likeLeaf{
+
+    width:42px;
+
+}
+
+.likeCounter{
+
+    width:34px;
+
+    height:20px;
+
+    font-size:12px;
+
+}
+
+.feedbackContainer{
+
+    top:8%;
+
+    right:0;
+
+    width:90px;
+
+}
+
     }
 
     .quoteWrapper{
@@ -663,7 +697,7 @@ fadeIn .6s ease .35s both;
 
 .likeLeaf{
 
-    width:56px;
+    width:clamp(36px,4vw,56px);
 
     cursor:pointer;
 
@@ -764,7 +798,7 @@ fadeIn .6s ease .35s both;
 
     right:-15px;
 
-    width:125px;
+    width:clamp(80px,9vw,125px);
 
     cursor:pointer;
 

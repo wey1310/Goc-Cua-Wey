@@ -1,0 +1,808 @@
+/* =====================================================
+   OVERLAY
+===================================================== */
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    animation:fadeIn .35s ease;
+
+}
+
+.backdrop{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.58);
+
+    backdrop-filter:blur(5px);
+
+}
+
+/* =====================================================
+   POPUP
+===================================================== */
+
+.popupWrapper{
+
+    position:relative;
+
+    width:min(55vw,750px);
+
+    aspect-ratio:1.25;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    animation:popupShow .35s ease;
+    
+
+    /* ===== Design Token ===== */
+
+--scale:1;
+
+--transition:.25s;
+
+--ease:cubic-bezier(.2,.8,.2,1);
+
+--shadow-glow:
+    0 0 10px rgba(255,245,180,.8);
+
+font-size:1rem;
+}
+
+.bgImage{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    transition:
+
+    filter var(--transition),
+
+    opacity var(--transition);
+
+    filter:
+
+drop-shadow(
+
+0 0 18px
+
+rgba(255,240,180,.18)
+
+);
+
+}
+
+/* =====================================================
+   AVATAR
+===================================================== */
+
+.avatarWrapper{
+
+    position:absolute;
+
+    top:6%;
+
+    left:50%;
+
+    translate:-50% 0;
+
+    width:25%;
+
+    aspect-ratio:1;
+
+    animation:
+
+    floatAvatar 4s ease-in-out infinite;
+
+}
+
+.avatarMask{
+
+    position:absolute;
+
+    top:20%;
+
+    left:12%;
+
+    width:75%;
+
+    height:75%;
+
+    overflow:hidden;
+
+    border-radius:50%;
+
+}
+
+.avatarImg{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:
+
+        transform var(--transition) var(--ease);
+
+}
+.avatarWrapper:hover .avatarImg{
+
+    transform:scale(1.05);
+
+    filter:brightness(1.05);
+
+}
+
+.avatarFrame{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    pointer-events:none;
+
+    user-select:none;
+
+}
+
+/* =====================================================
+   INFO
+===================================================== */
+
+.infoWrapper{
+
+    position:absolute;
+
+    top:38%;
+
+    left:50%;
+
+    translate:-50% 0;
+
+    width:80%;
+
+    text-align:center;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:2px;
+
+}
+
+.characterName{
+
+    margin: 0rem;
+
+    color:#080808;
+
+    font-family:"Segoe UI",sans-serif;
+
+    font-weight:700;
+
+    font-size:calc(1.5em * var(--scale));
+
+    line-height:1.5;
+
+    animation:
+
+fadeIn .45s ease .15s both;
+
+}
+
+.tags{
+
+    color:#016837;
+
+    font-family:"Comic Sans MS",cursive;
+
+    font-weight:500;
+
+    font-size:calc(.60em * var(--scale));
+
+    line-height:1;
+
+}
+
+/* =====================================================
+   COUNTER
+===================================================== */
+
+.leafCount{
+
+    position:absolute;
+
+    top:18%;
+
+    left:75%;
+
+    translate:-50% 0;
+
+    color:#4d5c39;
+
+    font-weight:700;
+
+    text-align:center;
+
+    font-size:calc(.95em * var(--scale));
+
+    line-height:1.3;
+
+    animation:
+
+fadeIn .5s ease .25s both;
+
+}
+
+.viewCount{
+
+    position:absolute;
+
+    top:25%;
+
+    right:18.5%;
+
+    translate:-50% 0;
+
+    color:#5c6669;
+
+    font-weight:700;
+
+    text-align:center;
+
+    font-size:calc(.80em * var(--scale));
+
+    line-height:1.2;
+
+    animation:
+
+fadeIn .5s ease .3s both;
+
+}
+
+/* =====================================================
+   QUOTE
+===================================================== */
+
+.quoteWrapper{
+
+    position:absolute;
+
+    top:55.5%;
+
+    left:50%;
+
+    translate:-50% 0;
+
+    width:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    animation:
+
+fadeIn .6s ease .2s both;
+
+}
+
+.quoteBg{
+
+    width:100%;
+
+    display:block;
+
+    pointer-events:none;
+
+    user-select:none;
+
+}
+
+.quoteTextContainer{
+
+    position:absolute;
+
+    width:84%;
+
+    text-align:center;
+
+}
+
+.quoteTextContainer p{
+
+    margin:0;
+
+    color:#395c41;
+
+    font-family:"Times New Roman",serif;
+
+    font-style:italic;
+
+    line-height:1.25;
+
+    word-break:break-word;
+
+    overflow-wrap:anywhere;
+
+    font-size:calc(.60em * var(--scale));
+
+}
+
+/* =====================================================
+   CUPS
+===================================================== */
+
+.cupsWrapper{
+
+    position:absolute;
+
+    top:70%;
+
+    left:50%;
+    
+    translate:-50% 0;
+
+    width:58%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    gap:6%;
+
+    animation:
+
+fadeIn .6s ease .35s both;
+
+}
+
+.cupBtn{
+
+    position:relative;
+
+    width:38%;
+
+    transition:
+
+    transform var(--transition) var(--ease),
+
+    filter var(--transition),
+
+    opacity var(--transition);
+
+}
+
+.cupBtn:hover{
+
+    transform:
+
+        translateY(-3%)
+
+        scale(1.03);
+
+    filter:brightness(1.05);
+
+}
+
+.cupBtn:active{
+
+    transform:scale(.98);
+
+}
+
+.cupImg{
+
+    width:100%;
+
+    display:block;
+
+    user-select:none;
+
+    pointer-events:none;
+
+}
+
+.cupText{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
+
+.closeBtnWrapper{
+
+    position:absolute;
+
+    bottom:clamp(-10px,-2vw,-8px);
+
+    left:50%;
+    
+    translate:-50% 0;
+
+    width:clamp(50px,7vw,225px);
+
+    cursor:pointer;
+
+    z-index:20;
+
+    transition:
+
+    transform var(--transition) var(--ease),
+
+    filter var(--transition);
+
+}
+
+.closeBtnWrapper:hover{
+
+    transform:
+
+        rotate(8deg)
+
+        scale(1.08);
+
+    filter:drop-shadow(
+
+    var(--shadow-glow)
+
+);
+
+}
+
+.closeBtnWrapper:active{
+
+    transform:scale(.95);
+
+}
+
+.closeBtnImg{
+
+    width:100%;
+
+    display:block;
+
+    pointer-events:none;
+
+    user-select:none;
+
+}
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes popupShow{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+            scale(.92)
+
+            translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+            scale(1)
+
+            translateY(0);
+
+    }
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    .popupWrapper{
+
+        width:96vw;
+
+        --scale:.78;
+
+    }
+
+    .quoteWrapper{
+
+        width:46%;
+
+    }
+
+    .cupsWrapper{
+
+        width:62%;
+
+    }
+
+}
+
+
+.disabled{
+
+    opacity:.35;
+
+    filter:grayscale(100%);
+
+    cursor:default;
+
+    pointer-events:none;
+
+}
+
+@keyframes floatAvatar{
+
+    0%{
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.likeContainer{
+
+    position:absolute;
+
+    top:80px;
+
+    right:135px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    z-index:20;
+
+    animation:
+
+        floatLike 3.8s ease-in-out infinite;
+
+}
+
+.likeLeaf{
+
+    width:56px;
+
+    cursor:pointer;
+
+    transform:translateX(-15px);
+
+    transition:
+
+        transform .28s ease,
+
+        filter .28s ease,
+
+        rotate .28s ease;
+
+}
+
+
+
+.likeLeaf:hover{
+
+    transform:
+
+        translateX(-15px)
+
+        translateY(-6px)
+
+        rotate(-8deg)
+
+        scale(1.15);
+
+    filter:
+
+        drop-shadow(
+            0 0 12px
+            rgba(255,205,220,.95)
+        )
+
+        drop-shadow(
+            0 0 22px
+            rgba(255,160,190,.45)
+        );
+
+}
+
+.likeCounter{
+
+    margin-top:-8px;
+
+    width:42px;
+
+    height:24px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:#354328;
+
+}
+
+@keyframes floatLike{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-5px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   FEEDBACK
+===================================================== */
+
+.feedbackContainer{
+
+    position:absolute;
+
+    top:60px;      /* nằm dưới tim */
+
+    right:-15px;
+
+    width:125px;
+
+    cursor:pointer;
+
+    z-index:20;
+
+    transition:
+
+        transform .25s,
+
+        filter .25s;
+
+}
+
+.feedbackContainer:hover{
+
+    transform:scale(1.08);
+
+    filter:drop-shadow(
+
+        0 0 10px
+
+        rgba(255,240,180,.8)
+
+    );
+
+}
+
+.feedbackContainer:active{
+
+    transform:scale(.95);
+
+}
+
+.feedbackIcon{
+
+    width:100%;
+
+    display:block;
+
+}
+

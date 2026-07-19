@@ -1,0 +1,1424 @@
+/* =====================================================
+   OVERLAY
+===================================================== */
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:
+
+        clamp(10px,2vw,30px);
+
+    overflow:auto;
+
+}
+
+/* =====================================================
+   BACKDROP
+===================================================== */
+
+.backdrop{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        rgba(18,18,18,.55);
+
+    backdrop-filter:
+
+        blur(8px);
+
+}
+
+/* =====================================================
+   FLYING LEAF
+===================================================== */
+
+.flyingLeaf{
+
+    position:absolute;
+
+    top:65%;
+
+    font-size:28px;
+
+    pointer-events:none;
+
+    z-index:5;
+
+    filter:
+
+        drop-shadow(
+
+            0 6px 8px
+
+            rgba(0,0,0,.15)
+
+        );
+
+}
+
+/* =====================================================
+   POPUP
+===================================================== */
+
+.popup{
+
+    position:relative;
+
+    z-index:10;
+
+    width:
+
+        min(
+
+            1100px,
+
+            100%
+
+        );
+
+    max-width:
+
+        calc(
+
+            100vw - 20px
+
+        );
+
+    max-height:
+
+        calc(
+
+            100vh - 20px
+
+        );
+
+    min-height:500px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            #fffdf9,
+
+            #f7f2e9
+
+        );
+
+    box-shadow:
+
+        0 25px 60px
+
+        rgba(0,0,0,.25);
+
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:
+
+        26px
+
+        34px;
+
+    border-bottom:
+
+        1px
+
+        solid
+
+        rgba(0,0,0,.08);
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            #f5efe2,
+
+            #fffdf9
+
+        );
+
+}
+
+.title{
+
+    margin:0;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#4b5c3f;
+
+}
+
+.subtitle{
+
+    margin-top:8px;
+
+    font-size:15px;
+
+    color:#7b756c;
+
+}
+
+.closeBtn{
+
+    width:46px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#efe7d9;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    transition:
+
+        transform .25s,
+
+        background .25s;
+
+}
+
+.closeBtn:hover{
+
+    transform:rotate(90deg);
+
+    background:#e7dcc8;
+
+}
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.content{
+
+    flex:1;
+
+    min-height:0;
+
+    overflow:hidden;
+
+    display:grid;
+
+    grid-template-columns:
+
+        minmax(
+
+            280px,
+
+            340px
+
+        )
+
+        1fr;
+
+}
+
+/* =====================================================
+   LEFT PANEL
+===================================================== */
+
+.leftPanel{
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:28px;
+
+    min-height:0;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+}
+
+.label{
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#5f5a50;
+
+}
+
+.input{
+
+    width:100%;
+
+    height:48px;
+
+    padding:
+
+        0
+
+        16px;
+
+    margin-bottom:22px;
+
+    border:
+
+        1px
+
+        solid
+
+        #ddd3c4;
+
+    border-radius:14px;
+
+    background:#fff;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:
+
+        border-color .25s,
+
+        box-shadow .25s;
+
+}
+
+.input:focus{
+
+    border-color:#90b16b;
+
+    box-shadow:
+
+        0 0 0 4px
+
+        rgba(144,177,107,.18);
+
+}
+
+.textarea{
+
+    width:100%;
+
+    min-height:140px;
+
+    height:140px;
+
+    max-height:220px;
+
+    resize:none;
+
+    overflow-y:auto;
+
+    padding:16px;
+
+    border:
+
+        1px
+
+        solid
+
+        #ddd3c4;
+
+    border-radius:16px;
+
+    background:#fff;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+    outline:none;
+
+    transition:
+
+        border-color .25s,
+
+        box-shadow .25s;
+
+}
+
+.textarea:focus{
+
+    border-color:#90b16b;
+
+    box-shadow:
+
+        0 0 0 4px
+
+        rgba(144,177,107,.18);
+
+}
+
+.counter{
+
+    margin-top:10px;
+
+    margin-bottom:20px;
+
+    text-align:right;
+
+    font-size:13px;
+
+    color:#8d877c;
+
+}
+
+.sendBtn{
+
+    height:56px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #88a95f,
+
+            #6e8f49
+
+        );
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:
+
+        transform .25s,
+
+        box-shadow .25s;
+
+}
+
+.sendBtn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+
+        0 12px 24px
+
+        rgba(110,143,73,.28);
+
+}
+
+/* =====================================================
+   RIGHT PANEL
+===================================================== */
+
+.rightPanel{
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:0;
+
+    overflow:hidden;
+
+    padding:28px;
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            #fffdfb,
+
+            #f9f6f0
+
+        );
+
+}
+
+/* =====================================================
+   LIST HEADER
+===================================================== */
+
+.listHeader{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:18px;
+
+    padding-bottom:12px;
+
+    border-bottom:
+
+        1px
+
+        solid
+
+        rgba(0,0,0,.08);
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#56664a;
+
+}
+
+/* =====================================================
+   FEEDBACK LIST
+===================================================== */
+
+.feedbackList{
+
+    flex:1;
+
+    min-height:0;
+
+    height:100%;
+
+    max-height:100%;
+
+    overflow-y:scroll;
+
+    overflow-x:hidden;
+
+    padding-right:10px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+@media(max-width:1100px){
+
+    .popup{
+
+        width:98vw;
+
+        max-height:96vh;
+
+    }
+
+}
+
+.feedbackList::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.feedbackList::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+.feedbackList::-webkit-scrollbar-thumb{
+
+    background:#d8cfbe;
+
+    border-radius:999px;
+
+}
+
+.feedbackList::-webkit-scrollbar-thumb:hover{
+
+    background:#bfb29b;
+
+}
+
+/* =====================================================
+   FEEDBACK BUBBLE
+===================================================== */
+
+.feedbackBubble{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    padding:18px;
+
+    border-radius:22px;
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            #ffffff,
+
+            #f8f4ec
+
+        );
+
+    border:
+
+        1px
+
+        solid
+
+        rgba(0,0,0,.05);
+
+    box-shadow:
+
+        0 10px 24px
+
+        rgba(0,0,0,.06);
+
+    transition:
+
+        transform .25s,
+
+        box-shadow .25s;
+
+}
+
+.feedbackBubble:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 18px 36px
+
+        rgba(0,0,0,.12);
+
+}
+
+/* =====================================================
+   TOP
+===================================================== */
+
+.feedbackTop{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:16px;
+
+}
+
+.userInfo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    min-width:0;
+
+}
+
+/* =====================================================
+   AVATAR
+===================================================== */
+
+.avatar{
+
+    flex-shrink:0;
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #90b16b,
+
+            #6e8f49
+
+        );
+
+    box-shadow:
+
+        0 8px 18px
+
+        rgba(110,143,73,.28);
+
+}
+
+.userInfo strong{
+
+    display:block;
+
+    font-size:15px;
+
+    color:#4f4a42;
+
+    margin-bottom:3px;
+
+}
+
+.userInfo span{
+
+    display:block;
+
+    font-size:12px;
+
+    color:#999183;
+
+}
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.messageBubble{
+
+    position:relative;
+
+    padding:16px 18px;
+
+    margin-left:58px;
+
+    border-radius:18px;
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            #f7f3eb,
+
+            #ece6db
+
+        );
+
+    color:#504a42;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    white-space:pre-wrap;
+
+    word-break:break-word;
+
+    overflow-wrap:anywhere;
+
+}
+
+
+.messageList::-webkit-scrollbar-track{
+
+    background:#eef3e5;
+
+    border-radius:20px;
+
+}
+
+.messageList::-webkit-scrollbar-thumb{
+
+    background:#9fb389;
+
+    border-radius:20px;
+
+}
+
+.messageList::-webkit-scrollbar-thumb:hover{
+
+    background:#7f9468;
+
+}
+
+
+/* =====================================================
+   BUBBLE TAIL
+===================================================== */
+
+.messageBubble::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-10px;
+
+    top:18px;
+
+    width:18px;
+
+    height:18px;
+
+    background:#f2ede4;
+
+    clip-path:
+
+        polygon(
+
+            100% 0,
+
+            100% 100%,
+
+            0 50%
+
+        );
+
+}
+
+/* =====================================================
+   DELETE BUTTON
+===================================================== */
+
+.deleteBtn{
+
+    flex-shrink:0;
+
+    width:36px;
+
+    height:36px;
+
+    border:none;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#f6efe4;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:
+
+        transform .25s,
+
+        background .25s,
+
+        box-shadow .25s;
+
+}
+
+.deleteBtn:hover{
+
+    transform:scale(1.12);
+
+    background:#efd9d9;
+
+    box-shadow:
+
+        0 8px 18px
+
+        rgba(215,96,96,.18);
+
+}
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.empty{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px 24px;
+
+    color:#857d72;
+
+}
+
+.emptyIcon{
+
+    width:92px;
+
+    height:92px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+    font-size:42px;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #eef6e8,
+
+            #dce8d0
+
+        );
+
+    animation:
+
+        leafFloat
+
+        3s
+
+        ease-in-out
+
+        infinite;
+
+}
+
+.empty p{
+
+    margin:0;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:#62784e;
+
+}
+
+.empty span{
+
+    margin-top:12px;
+
+    max-width:320px;
+
+    line-height:1.8;
+
+    font-size:14px;
+
+    color:#9a9286;
+
+}
+
+/* =====================================================
+   LEAF ANIMATION
+===================================================== */
+
+@keyframes leafFloat{
+
+    0%{
+
+        transform:
+
+            translateY(0)
+
+            rotate(0deg);
+
+    }
+
+    50%{
+
+        transform:
+
+            translateY(-8px)
+
+            rotate(8deg);
+
+    }
+
+    100%{
+
+        transform:
+
+            translateY(0)
+
+            rotate(0deg);
+
+    }
+
+}
+
+/* =====================================================
+   BUTTON ANIMATION
+===================================================== */
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.03);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+.sendBtn:active{
+
+    animation:
+
+        pulse
+
+        .25s
+
+        ease;
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:960px){
+
+    .popup{
+
+        width:96vw;
+
+        height:92vh;
+
+    }
+
+    .content{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .leftPanel{
+
+        border-right:none;
+
+        border-bottom:
+
+            1px
+
+            solid
+
+            rgba(0,0,0,.08);
+
+    }
+
+    .rightPanel{
+
+        min-height:0;
+
+    flex:1;
+
+
+    }
+
+}
+
+@media(max-width:640px){
+
+    .overlay{
+
+        padding:10px;
+
+        align-items:center;
+
+    }
+
+    .textarea{
+
+    height:120px;
+
+    min-height:120px;
+
+    max-height:180px;
+
+}
+
+    .leftPanel{
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+}
+
+.rightPanel{
+
+    overflow:hidden;
+
+}
+
+    .popup{
+
+        width:100%;
+
+        max-width:none;
+
+        display:flex;
+
+        flex-direction:column;
+
+        height:calc(100dvh - 20px);
+
+        max-height:calc(100dvh - 20px);
+
+        min-height:0;
+
+        border-radius:20px;
+
+    }
+
+    .header{
+
+        padding:20px;
+
+    }
+
+    .title{
+
+        font-size:24px;
+
+    }
+
+    .subtitle{
+
+        font-size:14px;
+
+    }
+
+    .leftPanel,
+
+    .rightPanel{
+
+        padding:18px;
+
+    }
+
+    .messageBubble{
+
+        margin-left:0;
+
+    }
+
+    .messageBubble::before{
+
+        display:none;
+
+    }
+
+    .feedbackTop{
+
+        align-items:center;
+
+    }
+
+    .avatar{
+
+        width:40px;
+
+        height:40px;
+
+        font-size:15px;
+
+    }
+
+    .sendBtn{
+
+        height:52px;
+
+        font-size:15px;
+
+    }
+
+}
+
+/* =====================================================
+   DISABLED
+===================================================== */
+
+.input:disabled,
+
+.textarea:disabled{
+
+    opacity:.65;
+
+    cursor:not-allowed;
+
+    background:#f5f3ef;
+
+}
+
+.sendBtn:disabled{
+
+    opacity:.75;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+    box-shadow:none;
+
+}
+
+/* =====================================================
+   SELECTION
+===================================================== */
+
+.input::selection,
+
+.textarea::selection,
+
+.messageBubble::selection{
+
+    background:
+
+        rgba(
+
+            144,
+
+            177,
+
+            107,
+
+            .28
+
+        );
+
+    color:#2f3429;
+
+}
+
+/* =====================================================
+   PLACEHOLDER
+===================================================== */
+
+.input::placeholder,
+
+.textarea::placeholder{
+
+    color:#b0a89b;
+
+}
+
+/* =====================================================
+   FOCUS
+===================================================== */
+
+button:focus-visible,
+
+input:focus-visible,
+
+textarea:focus-visible{
+
+    outline:
+
+        3px
+
+        solid
+
+        rgba(
+
+            144,
+
+            177,
+
+            107,
+
+            .35
+
+        );
+
+    outline-offset:2px;
+
+}
+
+/* =====================================================
+   SMOOTH
+===================================================== */
+
+.popup,
+
+.feedbackBubble,
+
+.sendBtn,
+
+.closeBtn,
+
+.deleteBtn,
+
+.input,
+
+.textarea{
+
+    transition:
+
+        all
+
+        .25s
+
+        ease;
+
+}
+
+/* =====================================================
+   SCROLL
+===================================================== */
+
+.feedbackList{
+
+    scroll-behavior:smooth;
+
+}
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.feedbackBubble:hover .avatar{
+
+    transform:
+
+        rotate(
+
+            8deg
+
+        )
+
+        scale(
+
+            1.06
+
+        );
+
+}
+
+.feedbackBubble:hover .messageBubble{
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            #faf7f1,
+
+            #efe8dc
+
+        );
+
+}
+
+/* =====================================================
+   GLASS
+===================================================== */
+
+.popup{
+
+    backdrop-filter:
+
+        blur(
+
+            18px
+
+        );
+
+}
+
+/* =====================================================
+   END
+===================================================== */

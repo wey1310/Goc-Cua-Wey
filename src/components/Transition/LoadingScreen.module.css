@@ -1,0 +1,369 @@
+/* =====================================================
+   SCENE
+===================================================== */
+
+.scene{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:99999;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #fffef8 0%,
+            #f7f6eb 40%,
+            #eef4e3 100%
+        );
+
+}
+
+/* =====================================================
+   LIGHT
+===================================================== */
+
+.light{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+
+            circle at 50% 10%,
+
+            rgba(255,255,255,.9),
+
+            transparent 60%
+
+        );
+
+    filter:blur(80px);
+
+    opacity:.7;
+
+}
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.content{
+
+    position:relative;
+
+    z-index:10;
+
+    width:min(700px,88vw);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo{
+
+    width:250px;
+
+    margin-bottom:40px;
+
+    animation:
+
+        floating
+
+        3s
+
+        ease-in-out
+
+        infinite;
+
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.content h2{
+
+    margin:0;
+
+    color:#5d7449;
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+/* =====================================================
+   SUBTITLE
+===================================================== */
+
+.content p{
+
+    margin-top:25px;
+
+    color:#7b8d70;
+
+    font-size:1rem;
+
+    font-style:italic;
+
+    text-align:center;
+
+}
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+.progressBar{
+
+    position:relative;
+
+    width:100%;
+
+    height:18px;
+
+    margin-top:45px;
+
+    overflow:visible;
+
+    border-radius:999px;
+
+    background:#fefefe;
+
+    border:2px solid #cfe1bf;
+
+    box-shadow:
+
+        inset 0 0 12px rgba(0,0,0,.05);
+
+}
+
+/* =====================================================
+   FILL
+===================================================== */
+
+.progressFill{
+
+    position:relative;
+
+    height:100%;
+
+    border-radius:999px;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            #87af67,
+
+            #9bc778,
+
+            #cbe7b3
+
+        );
+
+    transition:width .08s linear;
+
+}
+
+/* =====================================================
+   RUNNER
+===================================================== */
+
+.runner{
+
+    position:absolute;
+
+    right:-18px;
+
+    top:50%;
+
+    width:38px;
+
+    transform:
+
+        translateY(-50%)
+
+        rotate(-15deg);
+
+    filter:
+
+        drop-shadow(
+
+            0 6px 8px rgba(0,0,0,.18)
+
+        );
+
+}
+
+/* =====================================================
+   LEAF
+===================================================== */
+
+.leafLayer{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.leaf{
+
+    position:absolute;
+
+    top:-60px;
+
+    width:24px;
+
+    opacity:.18;
+
+    animation:
+
+        leafFall
+
+        linear
+
+        infinite;
+
+}
+
+/* =====================================================
+   FLOAT
+===================================================== */
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =====================================================
+   LEAF FALL
+===================================================== */
+
+@keyframes leafFall{
+
+    0%{
+
+        transform:
+
+            translateY(-60px)
+
+            rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:.2;
+
+    }
+
+    50%{
+
+        transform:
+
+            translateY(55vh)
+
+            translateX(35px)
+
+            rotate(180deg);
+
+    }
+
+    100%{
+
+        transform:
+
+            translateY(110vh)
+
+            translateX(-40px)
+
+            rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:768px){
+
+    .logo{
+
+        width:250px;
+
+    }
+
+    .content h2{
+
+        font-size:1.5rem;
+
+    }
+
+    .progressBar{
+
+        height:14px;
+
+    }
+
+    .runner{
+
+        width:30px;
+
+    }
+
+}

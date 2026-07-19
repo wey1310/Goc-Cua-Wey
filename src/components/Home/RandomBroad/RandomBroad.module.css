@@ -1,0 +1,228 @@
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+
+    position:relative;
+
+    width:clamp(300px,42vw,440px);
+
+    aspect-ratio:450/320;
+
+    flex-shrink:0;
+
+}
+
+/* =====================================================
+   BOARD
+===================================================== */
+
+.board{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    display:block;
+
+    pointer-events:none;
+
+    user-select:none;
+
+}
+
+/* =====================================================
+   RANDOM BUTTON
+===================================================== */
+
+.randomButton{
+
+    position:absolute;
+
+    left:50%;
+
+    top:10%;
+
+    transform:translateX(-50%);
+
+    width:56%;
+
+    border:none;
+
+    background:none;
+
+    padding:0;
+
+    cursor:pointer;
+
+    z-index:20;
+
+    transition:
+        transform .25s,
+        filter .25s;
+
+}
+
+.randomButton:hover{
+
+    transform:
+        translateX(-50%)
+        scale(1.05);
+
+    filter:
+        drop-shadow(
+            0 0 12px rgba(255,255,210,.8)
+        );
+
+}
+
+.randomButton img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+/* =====================================================
+   WEY
+===================================================== */
+
+.wey{
+
+    position:absolute;
+
+    left:50%;
+
+    top:24%;
+
+    transform:translateX(-50%);
+
+    width:34%;
+
+    height:auto;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    z-index:10;
+
+}
+
+/* =====================================================
+   RANDOM LEAF
+===================================================== */
+
+.flyLeaf{
+
+    position:absolute;
+
+    left:50%;
+
+    top:48%;
+
+    transform:translate(-50%,-50%);
+
+    width:9%;
+
+    pointer-events:none;
+
+    z-index:30;
+
+    animation:
+        flyLeaf
+        1.15s
+        ease-in-out
+        forwards;
+
+}
+
+/* =====================================================
+   LEAF ANIMATION
+===================================================== */
+
+@keyframes flyLeaf{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg)
+            scale(.9);
+
+    }
+
+    20%{
+
+        transform:
+            translate(-20%,-90%)
+            rotate(10deg)
+            scale(1);
+
+    }
+
+    40%{
+
+        transform:
+            translate(25%,-150%)
+            rotate(-12deg)
+            scale(1.05);
+
+    }
+
+    60%{
+
+        transform:
+            translate(75%,-220%)
+            rotate(18deg)
+            scale(1.08);
+
+    }
+
+    80%{
+
+        opacity:1;
+
+        transform:
+            translate(130%,-290%)
+            rotate(30deg)
+            scale(.95);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(190%,-360%)
+            rotate(40deg)
+            scale(.75);
+
+    }
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:768px){
+
+    .container{
+
+        width:min(95vw,450px);
+
+    }
+
+}

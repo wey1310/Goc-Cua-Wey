@@ -1,0 +1,475 @@
+.container {
+  width: 100%;
+  height: 100vh;
+
+  background-image: url("/assets/background/landing-bg.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+  position: relative;
+}
+
+/* Tiêu đề */
+.heading{
+    position:absolute;
+
+    top:-20px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:300px;
+
+    transform-origin:50% 0%;
+    animation:swing 5s ease-in-out infinite;
+}
+@keyframes swing{
+
+    0%{
+        transform:translateX(-50%) translateY(0) rotate(-1deg);
+    }
+
+    25%{
+        transform:translateX(-50%) translateY(2px) rotate(0.8deg);
+    }
+
+    50%{
+        transform:translateX(-50%) translateY(3px) rotate(1.5deg);
+    }
+
+    75%{
+        transform:translateX(-50%) translateY(2px) rotate(-0.8deg);
+    }
+
+    100%{
+        transform:translateX(-50%) translateY(0) rotate(-1deg);
+    }
+
+}
+
+/* Nút vào vườn */
+.enterButton{
+    position:absolute;
+
+    left:50%;
+    bottom:60px;
+
+    transform:translateX(-50%);
+
+    width:220px;
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+}
+.enterButton:hover{
+    transform:translateX(-50%) scale(1.06);
+}
+
+.enterButton:active{
+    transform:translateX(-50%) scale(.95);
+}
+.enterButton{
+    position:absolute;
+
+    left:50%;
+    bottom:175px;
+
+    transform:translateX(-50%);
+
+    width:220px;
+
+    cursor:pointer;
+    z-index:10;
+
+    transition:transform .25s ease,
+               filter .25s ease;
+}
+
+.enterButton:hover{
+    transform:translateX(-50%) scale(1.05);
+    filter:brightness(1.08);
+}
+
+.enterButton:active{
+    transform:translateX(-50%) scale(.97);
+}
+.wey{
+    position:absolute;
+    right:0;
+    bottom:0;
+
+    width:280px;
+
+    z-index:2;
+}
+.wey:hover{
+    transform:scale(1.03);
+}
+.quote{
+    position:absolute;
+
+    left:50%;
+    bottom:10px;
+
+    transform:translateX(-50%);
+
+    width:250px;
+
+    z-index:4;
+
+    pointer-events:none;
+}
+.quote:hover{
+    transform:scale(1.03);
+}
+.leafContainer{
+    position:absolute;
+    inset:0;
+
+    overflow:hidden;
+    pointer-events:none;
+
+    z-index:20;
+}
+.leaf1{
+    position:absolute;
+
+    width:520px;
+
+    top:-450px;
+    left:5%;
+
+    opacity:.45;
+
+    animation:fall1 18s linear infinite;
+}
+.leaf2{
+    position:absolute;
+
+    width:430px;
+
+    top:-420px;
+    left:45%;
+
+    opacity:.35;
+
+    animation:fall2 22s linear infinite;
+}
+.leaf3{
+    position:absolute;
+
+    width:500px;
+
+    top:-500px;
+    right:5%;
+
+    opacity:.4;
+
+    animation:fall3 20s linear infinite;
+}
+@keyframes fall1{
+
+    from{
+        transform:translateY(-100px) rotate(0deg);
+    }
+
+    to{
+        transform:translateY(180vh) rotate(180deg);
+    }
+
+}
+
+@keyframes fall2{
+
+    from{
+        transform:translateY(-120px) translateX(0) rotate(0deg);
+    }
+
+    to{
+        transform:translateY(120vh) translateX(-120px) rotate(-260deg);
+    }
+
+}
+
+@keyframes fall3{
+
+    from{
+        transform:translateY(-120px) translateX(0) rotate(0deg);
+    }
+
+    to{
+        transform:translateY(120vh) translateX(120px) rotate(300deg);
+    }
+
+}
+.secretButton{
+
+    position:absolute;
+
+    left:35px;
+
+    bottom:120px;
+
+    width:65px;      /* chỉnh nhỏ lại */
+
+    cursor:pointer;
+
+    z-index:15;
+
+    transition:.3s;
+
+}
+
+.secretButton:hover{
+
+    transform:scale(1.08);
+
+    filter:drop-shadow(0 0 12px #ffe88c);
+
+}
+.fbButton{
+
+    position:absolute;
+
+    left:35px;
+
+    bottom:40px;
+
+    width:65px;
+
+    cursor:pointer;
+
+    z-index:15;
+
+    transition:.3s;
+
+}
+
+.fbButton:hover{
+
+    transform:scale(1.08);
+
+    filter:drop-shadow(0 0 12px #7ec8ff);
+
+}
+.closeButton{
+
+    position:absolute;
+
+    top:12px;
+
+    right:12px;
+
+    width:34px;
+
+    height:34px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#d95d5d;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.closeButton:hover{
+
+    background:#bf4040;
+
+    transform:scale(1.08) rotate(90deg);
+
+}
+
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(5px);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+.popup{
+
+    position:relative;
+
+    width:420px;
+
+    max-width:90%;
+
+    padding:35px;
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    border:5px solid #f4f0e2;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.25),
+        0 0 25px rgba(255,245,180,.35);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    animation:popupShow .3s ease;
+
+}
+.popup h2{
+
+    margin:0;
+
+    color:#53683d;
+
+    font-size:28px;
+
+    font-family:"Nunito",sans-serif;
+
+}
+.popup p{
+
+    margin:12px 0 24px;
+
+    color:#6c775b;
+
+    text-align:center;
+
+    line-height:1.5;
+
+}
+.popup input{
+
+    width:100%;
+
+    padding:14px 18px;
+
+    border:2px solid #cfd7bc;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:18px;
+
+    transition:.25s;
+
+}
+
+.popup input:focus{
+
+    border-color:#8fa86b;
+
+    box-shadow:0 0 12px rgba(143,168,107,.35);
+
+}
+.confirmButton{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#7d9d59;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.confirmButton:hover{
+
+    background:#6e8d4d;
+
+}
+
+.popup button:hover{
+
+    background:#688447;
+
+    transform:translateY(-2px);
+
+}
+.closeButton{
+
+    position:absolute;
+
+    top:15px;
+
+    right:15px;
+
+    width:38px;
+
+    height:38px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#d95c5c;
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    padding:0;
+
+    margin:0;
+
+    z-index:999;
+
+}

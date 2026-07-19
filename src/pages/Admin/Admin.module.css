@@ -1,0 +1,382 @@
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+
+    position:relative;
+
+    width:100%;
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    background:url("/assets/background/admin-bg.webp");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    background-attachment:fixed;
+
+}
+
+/* =====================================================
+   WRAPPER
+===================================================== */
+
+.wrapper{
+
+    position:relative;
+
+    z-index:5;
+
+    width:min(96%,1400px);
+
+    margin:auto;
+
+    padding:35px 0 60px;
+
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.title{
+
+    position:relative;
+
+    width:fit-content;
+
+    margin:0 auto 28px;
+
+    padding:22px 40px;
+
+    text-align:center;
+
+    border-radius:24px;
+
+    background:rgba(187, 216, 206, 0.12);
+
+    backdrop-filter:blur(10px);
+
+    -webkit-backdrop-filter:blur(10px);
+
+    border:1px solid rgba(104, 215, 187, 0.15);
+
+    box-shadow:
+
+        0 10px 30px rgba(0,0,0,.18);
+
+}
+
+.title h1{
+
+    margin:0;
+
+    font-size:clamp(38px,4vw,56px);
+
+    font-weight:800;
+
+    color:#ffffff;
+
+    letter-spacing:.5px;
+
+    text-shadow:
+
+        0 3px 8px rgba(0,0,0,.45),
+
+        0 8px 24px rgba(0,0,0,.35),
+
+        0 0 18px rgba(255,255,255,.15);
+
+}
+
+.title p{
+
+    margin-top:10px;
+
+    font-size:18px;
+
+    color:rgba(5, 88, 60, 0.96);
+
+    text-shadow:
+
+        0 2px 8px rgba(0,0,0,.45);
+
+}
+
+
+/* =====================================================
+   TOOLBAR
+===================================================== */
+
+.toolbar{
+
+    margin-bottom:22px;
+
+}
+
+/* =====================================================
+   DASHBOARD
+===================================================== */
+
+.dashboard{
+
+    margin-bottom:22px;
+
+}
+
+/* =====================================================
+   PANEL
+===================================================== */
+
+.panel{
+
+    display:grid;
+
+    grid-template-columns:
+
+        360px
+
+        minmax(0,1fr);
+
+    gap:24px;
+
+    align-items:start;
+
+}
+
+/* =====================================================
+   HOME BUTTON
+===================================================== */
+
+.homeButton{
+
+    position:fixed;
+
+    left:24px;
+
+    top:24px;
+
+    z-index:999;
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.homeButton img{
+
+    width:88px;
+
+}
+
+.homeButton:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* =====================================================
+   LEAVES
+===================================================== */
+
+.leafContainer{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:2;
+
+}
+
+.leaf1,
+.leaf2,
+.leaf3{
+
+    position:absolute;
+
+    opacity:.28;
+
+}
+
+.leaf1{
+
+    width:430px;
+
+    left:-50px;
+
+    top:-430px;
+
+    animation:fall1 18s linear infinite;
+
+}
+
+.leaf2{
+
+    width:380px;
+
+    left:40%;
+
+    top:-450px;
+
+    animation:fall2 22s linear infinite;
+
+}
+
+.leaf3{
+
+    width:440px;
+
+    right:-50px;
+
+    top:-430px;
+
+    animation:fall3 20s linear infinite;
+
+}
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes fall1{
+
+    from{
+
+        transform:
+            translateY(-120px)
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            translateY(170vh)
+            rotate(220deg);
+
+    }
+
+}
+
+@keyframes fall2{
+
+    from{
+
+        transform:
+            translateY(-120px);
+
+    }
+
+    to{
+
+        transform:
+            translateY(170vh)
+            translateX(-120px)
+            rotate(-260deg);
+
+    }
+
+}
+
+@keyframes fall3{
+
+    from{
+
+        transform:
+            translateY(-120px);
+
+    }
+
+    to{
+
+        transform:
+            translateY(170vh)
+            translateX(120px)
+            rotate(260deg);
+
+    }
+
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width:1100px){
+
+    .panel{
+
+        grid-template-columns:300px 1fr;
+
+    }
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width:900px){
+
+    .wrapper{
+
+        width:95%;
+
+        padding:25px 0 50px;
+
+    }
+
+    .panel{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .homeButton{
+
+        left:12px;
+
+        top:12px;
+
+    }
+
+    .homeButton img{
+
+        width:70px;
+
+    }
+
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width:600px){
+
+    .title h1{
+
+        font-size:34px;
+
+    }
+
+    .title p{
+
+        font-size:15px;
+
+    }
+
+}
+

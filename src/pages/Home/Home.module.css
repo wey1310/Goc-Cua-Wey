@@ -1,0 +1,1255 @@
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    background:url("/assets/background/home-bg.webp");
+    background-repeat:no-repeat;
+    background-position:center top;
+    background-size:cover;
+    background-attachment:fixed;
+
+    animation:
+
+pageFade .6s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.heading{
+
+    display:block;
+
+    width:clamp(320px,42vw,650px);
+
+    margin:0 auto;
+
+    margin-top:-20px;
+
+    transform-origin:center top;
+
+    animation:boardSwing 5s ease-in-out infinite;
+
+    filter:drop-shadow(0 10px 18px rgba(0,0,0,.18));
+
+}
+
+@keyframes boardSwing{
+
+    0%{
+        transform:rotate(-1.5deg);
+    }
+
+    50%{
+        transform:rotate(1.5deg);
+    }
+
+    100%{
+        transform:rotate(-1.5deg);
+    }
+
+}
+
+
+/* =====================================================
+   COUNTER
+===================================================== */
+
+.counterWrapper{
+
+    position:relative;
+
+    width:clamp(320px,40vw,470px);
+
+    margin:10px auto 0;
+
+}
+
+.counterWrapper:hover{
+
+    transform:scale(1.02);
+
+}
+
+.counterBoard{
+
+    width:100%;
+
+    display:block;
+
+    filter:drop-shadow(0 8px 18px rgba(0,0,0,.18));
+
+}
+
+.counterItem1,
+.counterItem2,
+.counterItem3{
+
+    position:absolute;
+
+    top:24%;
+
+    width:24%;
+
+    text-align:center;
+
+}
+
+.counterItem1{
+
+    left:7%;
+
+}
+
+.counterItem2{
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+.counterItem3{
+
+    right:7%;
+
+}
+
+.counterWrapper h2{
+
+    margin:0;
+
+    font-size:clamp(20px,2.2vw,34px);
+
+    font-weight:700;
+
+    color:#53683d;
+
+    line-height:1;
+
+}
+
+.counterWrapper p{
+
+    margin-top:4%;
+
+    font-size:clamp(10px,.95vw,15px);
+
+    line-height:1.25;
+
+    color:#556847;
+
+}
+
+
+/* Vòng sáng */
+.counterWrapper::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-8px;
+
+    border-radius:30px;
+
+    pointer-events:none;
+
+    box-shadow:
+
+        0 0 10px rgba(255,243,170,.45),
+
+        0 0 25px rgba(255,235,120,.35),
+
+        0 0 45px rgba(255,225,90,.18);
+
+    opacity:.75;
+
+    animation:borderGlow 3s ease-in-out infinite;
+
+}
+
+@keyframes borderGlow{
+
+    0%{
+
+        opacity:.45;
+
+        transform:scale(.98);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.02);
+
+    }
+
+    100%{
+
+        opacity:.45;
+
+        transform:scale(.98);
+
+    }
+
+}
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.searchArea{
+
+    position:relative;
+
+    width:min(90%,760px);
+
+    margin:42px auto 0;
+
+}
+
+.searchBox{
+
+    width:100%;
+
+    display:block;
+
+    filter:drop-shadow(0 6px 12px rgba(0,0,0,.15));
+
+}
+
+.searchIcon{
+
+    position:absolute;
+
+    left:30px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:30px;
+
+}
+
+.searchInput{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    padding-left:60px;
+
+    padding-right:30px;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    color:#54673e;
+
+}
+
+.searchInput::placeholder{
+
+    color:#94a07d;
+
+}
+
+.searchArea{
+
+    transition:.3s;
+
+}
+
+.searchArea:hover{
+
+    transform:scale(1.01);
+
+}
+
+/* =====================================================
+   TAG
+===================================================== */
+
+.tagContainer{
+
+    width:min(95%,1250px);
+
+    margin:10px auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+    column-gap:10px;   /* khoảng cách ngang */
+    row-gap:0px;      /* khoảng cách dọc */
+
+
+}
+
+.tag,
+.activeTag{
+
+    position:relative;
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    animation:tagGlow 2s infinite;
+
+}
+
+@keyframes tagGlow{
+
+0%{
+
+filter:
+
+drop-shadow(0 0 8px rgba(255,245,180,.4));
+
+}
+
+50%{
+
+filter:
+
+drop-shadow(0 0 20px rgba(185, 255, 180, 0.9));
+
+}
+
+100%{
+
+filter:
+
+drop-shadow(0 0 8px rgba(255,245,180,.4));
+
+}
+
+}
+
+.tag img,
+.activeTag img{
+
+    width:clamp(115px,10vw,145px);
+
+    filter:drop-shadow(0 4px 8px rgba(255, 255, 255, 0.18));
+
+}
+
+.tag span,
+.activeTag span{
+
+    position:absolute;
+
+    left:52%;
+
+    top:40%;
+
+    transform:translate(-50%,-50%);
+
+    white-space:nowrap;
+
+    font-size:13px;
+
+    font-family: 'nunito', sans-serif;
+
+    font-weight:600;
+
+    color:#fcfafb;
+
+}
+
+.tag:hover{
+
+    transform:translateY(-7px) scale(1.05);
+
+    filter:drop-shadow(0 0 12px rgba(255,248,184,.8));
+
+}
+
+.activeTag{
+
+    transform:translateY(-5px);
+
+    filter:drop-shadow(0 0 18px rgb(175, 255, 193));
+
+}
+
+
+/* =====================================================
+   CHARACTER GRID
+===================================================== */
+
+.characterGrid{
+
+    width:min(95%,1320px);
+
+    margin:45px auto 80px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:36px;
+
+    justify-content:flex-start;
+
+    align-items:flex-start;
+
+}
+
+/* =====================================================
+   CHARACTER CARD
+===================================================== */
+
+.characterCard{
+
+    position:relative;
+
+    width:clamp(185px,18vw,240px);
+
+    cursor:pointer;
+
+    animation:cardAppear .7s ease;
+
+    transition:
+
+    transform .35s cubic-bezier(.2,.8,.2,1),
+
+    filter .35s,
+
+    box-shadow .35s;
+
+    box-shadow:
+
+0 6px 18px rgba(0,0,0,.12);
+
+}
+
+.characterCard:hover{
+
+    transform:
+        translateY(-12px)
+        rotate(-2deg)
+        scale(1.04);
+
+    filter:
+
+        brightness(1.04);
+
+
+    box-shadow:
+
+0 16px 36px rgba(0,0,0,.22);
+
+
+}
+
+@keyframes cardAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.characterCard::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:24px;
+
+    pointer-events:none;
+
+    transition:.3s;
+
+}
+
+.characterCard:hover::after{
+
+    box-shadow:
+    0 0 35px rgba(255,255,210,.45);
+
+}
+
+
+/* =====================================================
+   LEAF CARD
+===================================================== */
+
+.leafCard{
+
+    width:100%;
+
+    display:block;
+
+    animation:leafSwing 5s ease-in-out infinite;
+
+    transition:
+
+    transform .35s,
+
+    filter .35s;
+
+}
+
+.characterCard:hover .leafCard{
+
+    filter:
+
+        drop-shadow(
+
+            0 0 14px
+
+            rgba(255,240,170,.45)
+
+        );
+
+}
+
+@keyframes leafSwing{
+
+    0%{
+
+        transform:rotate(-2deg);
+
+    }
+
+    50%{
+
+        transform:rotate(2deg);
+
+    }
+
+    100%{
+
+        transform:rotate(-2deg);
+
+    }
+
+}
+
+.characterCard:hover .leafCard{
+
+    filter:
+        brightness(1.08)
+        drop-shadow(0 0 18px rgba(255,255,180,.75));
+
+}
+
+
+/* =====================================================
+   AVATAR
+===================================================== */
+
+.avatar{
+
+    position:absolute;
+
+    left:50%;
+
+    top:26px;
+
+    transform:translateX(-50%);
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    transition:
+
+    transform .35s,
+
+    filter .35s;
+
+    
+
+}
+
+.characterCard:hover .avatar{
+
+    transform:
+        translateX(-50%)
+        scale(1.12);
+
+    filter:
+        brightness(1.05);
+
+}
+
+
+/* =====================================================
+   NAME
+===================================================== */
+
+.characterCard h2{
+
+
+
+    position:absolute;
+
+
+
+    top: 160px;
+
+
+
+    width:100%;
+
+
+
+    margin:0;
+
+
+
+    text-align:center;
+
+
+
+    color:#fff;
+
+
+
+    font-size:clamp(18px,1.6vw,26px);
+
+
+
+    text-shadow:
+
+        0 3px 8px rgba(0,0,0,.4);
+
+    transition:
+
+    color .3s,
+
+    transform .3s;
+
+}
+
+.characterCard:hover h2{
+
+    color:#ffaad3;
+
+    transform:
+
+        scale(1.03);
+
+}
+
+.characterCard p{
+
+    position:absolute;
+
+    top:195px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:80%;
+
+    margin:0;
+
+    text-align:center;
+
+    color:#edf3dc;
+
+    font-size:12px;
+
+    line-height:1.45;
+
+    transition:
+
+    opacity .3s;
+
+}
+
+.characterCard:hover p{
+
+    opacity:1;
+
+}
+
+
+/* =====================================================
+   MUSIC BUTTON
+===================================================== */
+
+.musicButton{
+
+    position:fixed;
+
+    right:28px;
+    bottom:25px;
+
+    border:none;
+    background:none;
+
+    cursor:pointer;
+
+    z-index:999;
+
+    transition:.3s;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.musicButton:hover{
+
+transform:translateY(-4px);
+
+}
+
+.musicButton img{
+
+    width:74px;
+
+    animation:musicFloat 4s ease-in-out infinite;
+
+    transition:.3s;
+
+}
+
+.musicButton:hover img{
+
+    transform:
+        rotate(8deg)
+        scale(1.08);
+
+}
+
+.musicOff{
+
+    position:absolute;
+
+    inset:0;
+
+    mix-blend-mode:multiply;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#b13232;
+
+    font-size:34px;
+
+    font-weight:900;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,.9),
+        0 0 12px rgba(0,0,0,.35);
+
+    pointer-events:none;
+
+    user-select:none;
+
+}
+
+@keyframes musicBadge{
+
+    from{
+
+        transform:
+            scale(.3)
+            rotate(-20deg);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:
+            scale(1)
+            rotate(0);
+
+        opacity:1;
+
+    }
+
+}
+
+.musicButton:hover .musicOff{
+
+    transform:
+        translate(2px,-2px)
+        scale(1.08);
+
+}
+
+@keyframes musicFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.backButton{
+
+    position:fixed;
+
+    left:28px;
+
+    bottom:25px;
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    z-index:999;
+
+}
+
+.backButton img{
+
+    width:88px;
+
+    transition:.3s;
+
+}
+
+.backButton:hover img{
+
+    transform:
+        translateY(-6px);
+
+}
+
+
+/* =====================================================
+   PAGE ANIMATION
+===================================================== */
+
+@keyframes pageFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   FLOATING LEAF
+===================================================== */
+
+.container::before,
+.container::after{
+
+    content:"🍃";
+
+    position:fixed;
+
+    pointer-events:none;
+
+    opacity:.18;
+
+    font-size:38px;
+
+    z-index:1;
+
+}
+
+.container::before{
+
+    left:12%;
+
+    top:-60px;
+
+    animation:leafFall1 18s linear infinite;
+
+}
+
+.container::after{
+
+    right:15%;
+
+    top:-120px;
+
+    animation:leafFall2 22s linear infinite;
+
+}
+
+@keyframes leafFall1{
+
+    0%{
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50%{
+
+        transform:
+            translate(-45px,55vh)
+            rotate(180deg);
+
+    }
+
+    100%{
+
+        transform:
+            translate(40px,110vh)
+            rotate(360deg);
+
+    }
+
+}
+
+@keyframes leafFall2{
+
+    0%{
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50%{
+
+        transform:
+            translate(60px,60vh)
+            rotate(-180deg);
+
+    }
+
+    100%{
+
+        transform:
+            translate(-35px,110vh)
+            rotate(-360deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#edf3dc;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#90a179;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#74865d;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:1024px){
+
+    .avatar{
+
+        width:100px;
+        height:100px;
+
+    }
+
+    .characterCard h2{
+
+        top:150px;
+
+    }
+
+}
+
+
+    .searchInput{
+
+        font-size:16px;
+
+        padding-left:62px;
+
+    }
+
+    .searchIcon{
+
+        width:24px;
+
+        left:24px;
+
+    }
+
+    .musicButton img{
+
+        width:58px;
+
+    }
+
+    .backButton img{
+
+        width:64px;
+
+    }
+
+
+
+@media (max-width:480px){
+
+    .characterGrid{
+
+grid-template-columns:1fr;
+
+}
+    .tagContainer{
+
+        gap:10px;
+
+    }
+
+    .tag img,
+    .activeTag img{
+
+        width:90px;
+
+    }
+
+}
+@media (max-width:768px){
+
+    .container{
+
+        background-attachment:scroll;
+
+    }
+
+}
+
+.searchArea:focus-within{
+
+    filter:
+
+        drop-shadow(
+
+            0 0 14px rgba(255,245,180,.75)
+
+        );
+
+}
+
+.searchInput:focus{
+
+    color:#345027;
+
+}
+
+.activeTag::after{
+
+    content:"🌸";
+
+    position:absolute;
+
+    top:17px;
+
+    right:-1px;
+
+    font-size:20px;
+
+    animation:leafFloat 1.8s infinite;
+
+}
+
+@keyframes leafFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-4px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* =====================================================
+   BROAD SECTION
+===================================================== */
+
+.broadSection{
+
+    width:min(95%,1280px);
+
+    margin:40px auto 55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    gap:clamp(20px,2vw,40px);
+
+    flex-wrap:wrap;
+
+}
+
+/* =====================================================
+   BROAD RESPONSIVE
+===================================================== */
+
+@media(max-width:1024px){
+
+    .broadSection{
+
+        gap:28px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .broadSection{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:30px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .broadSection{
+
+        width:95%;
+
+        margin:30px auto 45px;
+
+    }
+
+}

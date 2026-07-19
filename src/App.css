@@ -1,0 +1,26 @@
+html,
+body,
+#root{
+    width:100%;
+    min-height:100%;
+    margin:0;
+    padding:0;
+}
+
+body{
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    font-family:"Quicksand",sans-serif;
+
+    background:#edf6e5;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+img{
+    user-select:none;
+    -webkit-user-drag:none;
+}

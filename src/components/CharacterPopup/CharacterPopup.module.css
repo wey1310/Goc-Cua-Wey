@@ -588,13 +588,13 @@ fadeIn .6s ease .35s both;
     .likeContainer{
 
         top:15%;             /* ⭐ Lên xuống của cả cụm Like */
-        right:30%;           /* ⭐ Trái phải của cả cụm Like */
+        right:25%;           /* ⭐ Trái phải của cả cụm Like */
 
     }
 
     .likeLeaf{
 
-        width:42px;          /* ⭐ Kích thước icon lá tim */
+        width:10px;          /* ⭐ Kích thước icon lá tim */
 
     }
 
@@ -602,14 +602,14 @@ fadeIn .6s ease .35s both;
 
         width:34px;          /* ⭐ Chiều rộng ô số */
         height:20px;         /* ⭐ Chiều cao ô số */
-        font-size:12px;      /* ⭐ Cỡ chữ số tim */
+        font-size:5px;      /* ⭐ Cỡ chữ số tim */
 
     }
 
     .feedbackContainer{
 
         top:80%;             /* ⭐ Khoảng cách từ tim xuống feedback */
-        right:-60%;          /* ⭐ Feedback lệch sang phải/trái so với tim */
+        right:-20%;          /* ⭐ Feedback lệch sang phải/trái so với tim */
         width:70px;          /* ⭐ Kích thước ly feedback */
 
     }

@@ -190,7 +190,7 @@ rgba(255,240,180,.18)
 
     position:absolute;
 
-    top:38%;
+    top:40%;
 
     left:50%;
 
@@ -206,7 +206,7 @@ rgba(255,240,180,.18)
 
     align-items:center;
 
-    gap:2px;
+    gap:10px;
 
 }
 
@@ -330,7 +330,7 @@ fadeIn .6s ease .2s both;
 
 .quoteBg{
 
-    width:100%;
+    width:110%;
 
     display:block;
 

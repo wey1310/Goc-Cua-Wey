@@ -580,55 +580,49 @@ fadeIn .6s ease .35s both;
 
     .popupWrapper{
 
-        width:96vw;
-
-        --scale:.78;
+        width:96vw;          /* ⭐ Kích thước toàn bộ popup */
+        --scale:.78;         /* ⭐ Tỉ lệ thu nhỏ chữ/icon */
 
     }
 
     .likeContainer{
 
-        top:15%;
-
-        right:30%;
+        top:15%;             /* ⭐ Lên xuống của cả cụm Like */
+        right:30%;           /* ⭐ Trái phải của cả cụm Like */
 
     }
 
     .likeLeaf{
 
-        width:10px;
+        width:42px;          /* ⭐ Kích thước icon lá tim */
 
     }
 
     .likeCounter{
 
-        width:10px;
-
-        height:10px;
-
-        font-size:5px;
+        width:34px;          /* ⭐ Chiều rộng ô số */
+        height:20px;         /* ⭐ Chiều cao ô số */
+        font-size:12px;      /* ⭐ Cỡ chữ số tim */
 
     }
 
     .feedbackContainer{
 
-        top:80%;
-
-        right:-60%;
-
-        width:60px;
+        top:80%;             /* ⭐ Khoảng cách từ tim xuống feedback */
+        right:-60%;          /* ⭐ Feedback lệch sang phải/trái so với tim */
+        width:70px;          /* ⭐ Kích thước ly feedback */
 
     }
 
     .quoteWrapper{
 
-        width:46%;
+        width:46%;           /* ⭐ Độ rộng khung quote */
 
     }
 
     .cupsWrapper{
 
-        width:62%;
+        width:62%;           /* ⭐ Độ rộng 2 ly GGAI + Plot */
 
     }
 

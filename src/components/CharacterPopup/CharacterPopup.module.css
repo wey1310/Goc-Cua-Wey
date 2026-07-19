@@ -677,9 +677,9 @@ fadeIn .6s ease .35s both;
 
     position:absolute;
 
-    top:80px;
+    top:17%;
 
-    right:135px;
+    right:22%;
 
     display:flex;
 
@@ -794,9 +794,9 @@ fadeIn .6s ease .35s both;
 
     position:absolute;
 
-    top:60px;      /* nằm dưới tim */
+    top:90%;
 
-    right:-15px;
+    right:-60%;
 
     width:clamp(80px,9vw,125px);
 

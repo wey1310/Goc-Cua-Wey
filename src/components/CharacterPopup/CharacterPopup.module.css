@@ -600,8 +600,8 @@ fadeIn .6s ease .35s both;
 
     .likeCounter{
 
-        width:25px;          /* ⭐ Chiều rộng ô số */
-        height: 10px;         /* ⭐ Chiều cao ô số */
+        width:10px;          /* ⭐ Chiều rộng ô số */
+        height: 5px;         /* ⭐ Chiều cao ô số */
         font-size:2px;      /* ⭐ Cỡ chữ số tim */
 
     }

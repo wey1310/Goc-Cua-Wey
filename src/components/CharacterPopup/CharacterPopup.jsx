@@ -252,7 +252,7 @@ await onRefresh?.();
         className={styles.likeLeaf}
 
     style={{
-        width: liked ? "58px" : "50px",
+        
         marginLeft: liked ? "-8px" : "4px",
         marginTop: liked ? "4px" : "3px",
     }}

@@ -594,7 +594,7 @@ fadeIn .6s ease .35s both;
 
     .likeLeaf{
 
-        width:6px;          /* ⭐ Kích thước icon lá tim */
+        width:3px;          /* ⭐ Kích thước icon lá tim */
 
     }
 
@@ -602,7 +602,7 @@ fadeIn .6s ease .35s both;
 
         width:25px;          /* ⭐ Chiều rộng ô số */
         height: 10px;         /* ⭐ Chiều cao ô số */
-        font-size:5px;      /* ⭐ Cỡ chữ số tim */
+        font-size:2px;      /* ⭐ Cỡ chữ số tim */
 
     }
 

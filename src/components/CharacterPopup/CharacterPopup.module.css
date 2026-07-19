@@ -580,7 +580,7 @@ fadeIn .6s ease .35s both;
 
     .popupWrapper{
 
-        width:156vw;          /* ⭐ Kích thước toàn bộ popup */
+        width:96vw;          /* ⭐ Kích thước toàn bộ popup */
         --scale:.78;         /* ⭐ Tỉ lệ thu nhỏ chữ/icon */
 
     }

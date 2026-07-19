@@ -4,8 +4,8 @@ import styles from "./LoadingScreen.module.css";
 
 import transitionMessages from "./transitionMessages";
 
-import heading from "../../assets/UI/LoadingScreen.png";
-import leaf from "../../assets/UI/tea-leaf-card.png";
+import heading from "../../assets/ui/LoadingScreen.png";
+import leaf from "../../assets/ui/tea-leaf-card.png";
 
 function LoadingScene({
 

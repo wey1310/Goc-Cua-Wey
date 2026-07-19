@@ -576,6 +576,8 @@ fadeIn .6s ease .35s both;
 
 /* Mobile */
 
+/* Mobile */
+
 @media (max-width:768px){
 
     .popupWrapper{
@@ -586,39 +588,37 @@ fadeIn .6s ease .35s both;
 
     }
 
+    .likeContainer{
+
+        top:17%;
+
+        right:22%;
+
+    }
 
     .likeLeaf{
 
-        width:10px;
+        width:22px;
 
     }
 
     .likeCounter{
 
-        position:absolute;
-        
-        width:20px;
+        width:34px;
 
-        height: 42px;
+        height:20px;
 
         font-size:12px;
 
-        top:15%;
-
-        right:20%;
-
     }
 
-
     .feedbackContainer{
-
-        position:absolute;
 
         top:90%;
 
         right:-60%;
 
-        width:50px;
+        width:60px;
 
     }
 

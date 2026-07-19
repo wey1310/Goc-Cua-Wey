@@ -576,8 +576,6 @@ fadeIn .6s ease .35s both;
 
 /* Mobile */
 
-/* Mobile */
-
 @media (max-width:768px){
 
     .popupWrapper{
@@ -604,17 +602,17 @@ fadeIn .6s ease .35s both;
 
     .likeCounter{
 
-        width:34px;
+        width:15px;
 
         height:20px;
 
-        font-size:12px;
+        font-size:8px;
 
     }
 
     .feedbackContainer{
 
-        top:90%;
+        top:80%;
 
         right:-60%;
 

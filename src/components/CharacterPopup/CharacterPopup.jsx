@@ -231,103 +231,50 @@ await onRefresh?.();
 
                 {/* ================= Counter ================= */}
 
-                <div
-
-    className={styles.likeContainer}
-
->
+                <div className={styles.likeContainer}>
 
     <motion.img
-
         src={
-
             liked
-
                 ? likeLeaf
-
                 : unlikeLeaf
-
         }
-
         className={styles.likeLeaf}
-
-    style={{
-        
-        marginLeft: liked ? "-8px" : "4px",
-        marginTop: liked ? "4px" : "3px",
-    }}
-
+        style={{
+            marginLeft: liked ? "-8px" : "4px",
+            marginTop: liked ? "4px" : "3px",
+        }}
         whileTap={{
-
-            scale:.85
-
+            scale: .85
         }}
-
         animate={{
-
-            scale:
-
-                liked
-
-                    ? [1,1.18,1]
-
-                    : [1,.92,1],
-
-            rotate:
-
-                liked
-
-                    ? [0,-10,10,0]
-
-                    : [0,5,-5,0]
-
+            scale: liked ? [1, 1.18, 1] : [1, .92, 1],
+            rotate: liked ? [0, -10, 10, 0] : [0, 5, -5, 0]
         }}
-
         transition={{
-
-            duration:.35
-
+            duration: .35
         }}
-
         onClick={toggleLike}
-
     />
 
-    <div
-
-        className={styles.likeCounter}
-
-    >
-
+    <div className={styles.likeCounter}>
         {likes}
-
     </div>
 
-{/* ================= Feedback ================= */}
+</div>
 
 <div
-
     className={styles.feedbackContainer}
-
     onClick={() => setOpenFeedback(true)}
-
 >
-
     <img
-
         src={cupFeedback}
-
         alt="Feedback"
-
         className={styles.feedbackIcon}
-
     />
-
 </div>
 
 
-
-</div>
 
                 {/* ================= Avatar ================= */}
 

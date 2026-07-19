@@ -37,7 +37,7 @@
 ===================================================== */
 
 .popupWrapper{
-
+    
     position:relative;
 
     width:min(55vw,750px);
@@ -589,9 +589,9 @@ fadeIn .6s ease .35s both;
 
     top:15%;
 
-    right:25%;
+    right:23%;
 
-    scale:.1;
+    zoom:.75;
 
 }
 
@@ -611,11 +611,13 @@ fadeIn .6s ease .35s both;
 
     .feedbackContainer{
 
-        top:80%;             /* ⭐ Khoảng cách từ tim xuống feedback */
-        right:-20%;          /* ⭐ Feedback lệch sang phải/trái so với tim */
-        width:70px;          /* ⭐ Kích thước ly feedback */
+    top:21%;
 
-    }
+    right:15%;
+
+    width:50px;
+
+}
 
     .quoteWrapper{
 
@@ -689,9 +691,6 @@ fadeIn .6s ease .35s both;
     animation:
 
         floatLike 3.8s ease-in-out infinite;
-
-    scale:1;
-    transform-origin:top center;
 
 }
 
@@ -796,11 +795,11 @@ fadeIn .6s ease .35s both;
 
     position:absolute;
 
-    top:90%;
+    top:23%;
 
-    right:-60%;
+    right:17%;
 
-    width:clamp(80px,9vw,125px);
+    width:clamp(70px,7vw,95px);
 
     cursor:pointer;
 

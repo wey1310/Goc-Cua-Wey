@@ -799,7 +799,7 @@ fadeIn .6s ease .35s both;
 
     right:17%;
 
-    width:clamp(70px,7vw,95px);
+    width:clamp(80px,9vw,125px);
 
     cursor:pointer;
 

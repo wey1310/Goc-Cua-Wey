@@ -587,10 +587,13 @@ fadeIn .6s ease .35s both;
 
     .likeContainer{
 
-        top:15%;             /* ⭐ Lên xuống của cả cụm Like */
-        right:25%;           /* ⭐ Trái phải của cả cụm Like */
+    top:15%;
 
-    }
+    right:25%;
+
+    scale:.6;
+
+}
 
     .likeLeaf{
 
@@ -687,7 +690,12 @@ fadeIn .6s ease .35s both;
 
         floatLike 3.8s ease-in-out infinite;
 
+    scale:1;
+    transform-origin:top center;
+
 }
+
+
 
 .likeLeaf{
 

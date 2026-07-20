@@ -604,17 +604,7 @@
 
     border-radius:22px;
 
-    background:
-
-        linear-gradient(
-
-            145deg,
-
-            #ffffff,
-
-            #f8f4ec
-
-        );
+    background:var(--card-bg,#FFF4E8);
 
     border:
 
@@ -629,12 +619,6 @@
         0 10px 24px
 
         rgba(0,0,0,.06);
-
-    transition:
-
-        transform .25s,
-
-        box-shadow .25s;
 
 }
 
@@ -700,20 +684,19 @@
 
     font-size:24px;
 
-    font-weight:700;
-
-    color:inherit;
-
-    background:
-
-    #ffffff;
+    background:var(--avatar-bg,#ffffff);
 
     box-shadow:
 
         0 8px 18px
 
-        rgba(110,143,73,.28);
+        rgba(0,0,0,.08);
 
+    transition:
+
+        transform .25s,
+
+        background .25s;
 }
 
 .userInfo strong{
@@ -752,17 +735,7 @@
 
     border-radius:18px;
 
-    background:
-
-        linear-gradient(
-
-            180deg,
-
-            #f7f3eb,
-
-            #ece6db
-
-        );
+    background:var(--bubble-bg,#ffffff);
 
     color:#504a42;
 
@@ -820,7 +793,7 @@
 
     height:18px;
 
-    background:#f2ede4;
+    background:inherit;
 
     clip-path:
 
@@ -858,33 +831,25 @@
 
     align-items:center;
 
-    background:#f6efe4;
+    background:var(--bubble-bg,#ffffff);
+
+    color:var(--delete-color,#c88);
 
     cursor:pointer;
 
     font-size:16px;
 
-    transition:
-
-        transform .25s,
-
-        background .25s,
-
-        box-shadow .25s;
-
 }
 
 .deleteBtn:hover{
 
-    transform:scale(1.12);
+    transform:
 
-    background:#efd9d9;
+        scale(1.08);
 
-    box-shadow:
+    filter:
 
-        0 8px 18px
-
-        rgba(215,96,96,.18);
+        brightness(.95);
 
 }
 
@@ -1379,21 +1344,6 @@ textarea:focus-visible{
 
 }
 
-.feedbackBubble:hover .messageBubble{
-
-    background:
-
-        linear-gradient(
-
-            180deg,
-
-            #faf7f1,
-
-            #efe8dc
-
-        );
-
-}
 
 /* =====================================================
    GLASS

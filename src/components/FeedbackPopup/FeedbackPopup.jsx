@@ -336,35 +336,79 @@ function FeedbackPopup({
    BUBBLE STYLE
 ===================================================== */
 
-const BUBBLE_COLORS = [
+const FLOWER_THEMES = [
 
-    "#FFF4E8",
+    {
 
-    "#FDF0F6",
+        avatar: "🌸",
 
-    "#EEF9F2",
+        card: "#FFE6D6",
 
-    "#EDF5FF",
+        bubble: "#FFF4E8",
 
-    "#FFF8E5",
+        delete: "#FFD4BE"
 
-    "#F4F1FF"
+    },
 
-];
+    {
 
-const FLOWERS = [
+        avatar: "🌼",
 
-    "🌸",
+        card: "#FFE8B3",
 
-    "🌼",
+        bubble: "#FFF8E5",
 
-    "🌷",
+        delete: "#FFD970"
 
-    "🌺",
+    },
 
-    "🪻",
+    {
 
-    "🌻"
+        avatar: "🌷",
+
+        card: "#FFD6E7",
+
+        bubble: "#FFF0F6",
+
+        delete: "#FFB7D4"
+
+    },
+
+    {
+
+        avatar: "🌺",
+
+        card: "#FFC6D4",
+
+        bubble: "#FFEEF2",
+
+        delete: "#FFA8BE"
+
+    },
+
+    {
+
+        avatar: "🪻",
+
+        card: "#DCCEFF",
+
+        bubble: "#F4F1FF",
+
+        delete: "#C7B0FF"
+
+    },
+
+    {
+
+        avatar: "🌻",
+
+        card: "#FFDDA0",
+
+        bubble: "#FFF6D9",
+
+        delete: "#F5C55A"
+
+    }
 
 ];
 
@@ -394,33 +438,21 @@ function hashString(str){
 
 }
 
-function getBubbleStyle(id){
+function getTheme(id){
 
-    const index =
+    return FLOWER_THEMES[
 
         hashString(id) %
 
-        BUBBLE_COLORS.length;
+        FLOWER_THEMES.length
 
-    return {
-
-        background:
-
-            BUBBLE_COLORS[index]
-
-    };
+    ];
 
 }
 
 function getAvatar(id){
 
-    return FLOWERS[
-
-        hashString(id) %
-
-        FLOWERS.length
-
-    ];
+    return getTheme(id).avatar;
 
 }
 
@@ -1247,11 +1279,25 @@ useEffect(() => {
 
                                                             className={styles.feedbackBubble}
 
-style={
+style={{
 
-    getBubbleStyle(item.id)
+    "--card-bg":
 
-}
+        getTheme(item.id).card,
+
+    "--bubble-bg":
+
+        getTheme(item.id).bubble,
+
+    "--avatar-bg":
+
+        getTheme(item.id).card,
+
+    "--delete-color":
+
+        getTheme(item.id).delete
+
+}}
 
                                                         >
 
@@ -1326,7 +1372,11 @@ style={
 
                                                             </div>
 
-                                                            <div className={styles.messageBubble}>
+                                                            <div
+
+                                                                className={styles.messageBubble}
+
+>
 
                                                                 {
 

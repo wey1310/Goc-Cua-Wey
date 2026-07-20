@@ -1313,7 +1313,29 @@ transform:translateY(-4px);
 
 }
 
+.characterCard h2{
 
+    width:82%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    text-align:center;
+
+    line-height:1.15;
+
+}
+
+.characterCard p{
+
+    top:188px;
+
+    font-size:14px;
+
+    line-height:1.35;
+
+}
 
 /* =====================================================
    BROAD SECTION

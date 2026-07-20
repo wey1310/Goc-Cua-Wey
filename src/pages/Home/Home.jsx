@@ -401,35 +401,12 @@ const increaseTea = (characterId) => {
             />
 
             <Counter
+    total={characters.length}
+    visit={visitCount}
+    tea={teaCount}
+/>
 
-                total={characters.length}
-
-                visit={visitCount}
-
-                tea={teaCount}
-
-            />
-
-            <SearchBar
-
-                keyword={keyword}
-
-                setKeyword={setKeyword}
-
-            />
-
-            <TagFilter
-
-                tags={tags}
-
-                selectedTags={selectedTags}
-
-                toggleTag={toggleTag}
-
-            />
-
-            <div className={styles.broadSection}>
-
+<div className={styles.broadSection}>
     <RandomBroad
         ref={randomBroadRef}
         characters={filteredCharacters}
@@ -440,8 +417,18 @@ const increaseTea = (characterId) => {
         characters={characters}
         onOpen={openPopup}
     />
-
 </div>
+
+<SearchBar
+    keyword={keyword}
+    setKeyword={setKeyword}
+/>
+
+<TagFilter
+    tags={tags}
+    selectedTags={selectedTags}
+    toggleTag={toggleTag}
+/>
 
 
             <div className={styles.characterGrid}>

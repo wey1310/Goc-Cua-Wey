@@ -1215,6 +1215,19 @@ transform:translateY(-4px);
 
 }
 
+.characterCard h2{
+
+    top:160px;
+
+}
+
+.characterCard p{
+
+    top:190px;
+
+}
+
+
 .searchArea:focus-within{
 
     filter:

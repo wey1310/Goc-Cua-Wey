@@ -151,33 +151,49 @@ pageFade .6s cubic-bezier(.2,.8,.2,1);
 }
 
 
-/* Vòng sáng */
-.counterWrapper::before{
 
-    content:"";
 
-    position:absolute;
 
-    inset:-8px;
+@keyframes borderGlow{
 
-    border-radius:30px;
 
-    pointer-events:none;
+    0%{
 
-    box-shadow:
 
-        0 0 10px rgba(255,243,170,.45),
+        opacity:.45;
 
-        0 0 25px rgba(255,235,120,.35),
 
-        0 0 45px rgba(255,225,90,.18);
+        transform:scale(.98);
 
-    opacity:.75;
 
-    animation:borderGlow 3s ease-in-out infinite;
+    }
+
+
+    50%{
+
+
+        opacity:1;
+
+
+        transform:scale(1.02);
+
+
+    }
+
+
+    100%{
+
+
+        opacity:.45;
+
+
+        transform:scale(.98);
+
+
+    }
+
 
 }
-
 
 
 /* =====================================================

@@ -62,7 +62,7 @@
 
     cursor:pointer;
 
-    z-index:20;
+    z-index:50;
 
     transition:
         transform .25s,

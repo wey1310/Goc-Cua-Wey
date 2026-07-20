@@ -312,31 +312,18 @@ const RandomBroad = forwardRef(({
 
             />
 
-            {
+            <button
+    className={styles.randomButton}
+    onClick={handleRandom}
+    disabled={phase !== "idle"}
+>
 
-                phase === "idle" && (
+    <img
+        src={randomBtn}
+        alt="Random"
+    />
 
-                    <button
-
-                        className={styles.randomButton}
-
-                        onClick={handleRandom}
-
-                    >
-
-                        <img
-
-                            src={randomBtn}
-
-                            alt="Random"
-
-                        />
-
-                    </button>
-
-                )
-
-            }
+</button>
 
             {
 

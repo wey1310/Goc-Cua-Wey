@@ -1174,29 +1174,31 @@ transform:translateY(-4px);
 
     }
 
+.avatar{
+
+    width:90px;
+
+    height:90px;
+
+    top:22px;
+
+}
+
 .characterCard h2{
 
-    top:138px;
+    top:128px;
 
-    width:82%;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    text-align:center;
-
-    line-height:1.15;
+    font-size:16px;
 
 }
 
 .characterCard p{
 
-    top:158px;
+    top:150px;
 
-    font-size:14px;
+    font-size:11px;
 
-    line-height:1.35;
+    line-height:1.3;
 
 }
 

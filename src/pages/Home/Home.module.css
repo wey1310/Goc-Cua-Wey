@@ -1299,3 +1299,19 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
     }
 
 }
+
+
+
+
+
+
+
+@media (max-width:768px){
+
+    body{
+
+        background:red !important;
+
+    }
+
+}

@@ -421,13 +421,21 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:
 
-    gap:36px;
+        repeat(
 
-    justify-content:flex-start;
+            auto-fit,
 
-    align-items:flex-start;
+            minmax(220px,220px)
+
+        );
+
+    justify-content:center;
+
+    align-items:start;
+
+    gap:34px;
 
 }
 
@@ -439,7 +447,7 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     position:relative;
 
-    width:clamp(185px,18vw,240px);
+    width:clamp(175px,17vw,225px);
 
     cursor:pointer;
 

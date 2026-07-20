@@ -1115,9 +1115,36 @@ transform:translateY(-4px);
 
     .characterGrid{
 
-grid-template-columns:1fr;
+        width:95%;
 
-}
+        margin:35px auto 60px;
+
+        display:grid;
+
+        grid-template-columns:
+
+            repeat(
+
+                2,
+
+                minmax(140px,170px)
+
+            );
+
+        justify-content:center;
+
+        justify-items:center;
+
+        gap:20px;
+
+    }
+
+    .characterCard{
+
+        width:100%;
+
+    }
+
     .tagContainer{
 
         gap:10px;
@@ -1132,6 +1159,9 @@ grid-template-columns:1fr;
     }
 
 }
+
+
+
 @media (max-width:768px){
 
     .container{

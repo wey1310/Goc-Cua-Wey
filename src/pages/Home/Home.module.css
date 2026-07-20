@@ -1055,9 +1055,13 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
 }
 
+@media (max-width:768px){
 
+    .container{
 
-@media (max-width:480px){
+        background-attachment:scroll;
+
+    }
 
     .characterGrid{
 
@@ -1087,7 +1091,7 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     .characterCard{
 
-        width:90%;
+        width:100%;
 
     }
 
@@ -1172,7 +1176,6 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     }
 
-
     .musicButton img{
 
         width:58px;
@@ -1182,16 +1185,6 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
     .backButton img{
 
         width:64px;
-
-    }
-
-}
-
-@media (max-width:768px){
-
-    .container{
-
-        background-attachment:scroll;
 
     }
 
@@ -1302,18 +1295,6 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
         align-items:center;
 
         gap:30px;
-
-    }
-
-}
-
-@media(max-width:480px){
-
-    .broadSection{
-
-        width:95%;
-
-        margin:30px auto 45px;
 
     }
 

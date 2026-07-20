@@ -152,17 +152,32 @@ function Home() {
 
     useEffect(() => {
 
+    const updateTea = () => {
+
         const tea =
-
-            Number(
-
-                localStorage.getItem("tea")
-
-            ) || 0;
+            Number(localStorage.getItem("tea")) || 0;
 
         setTeaCount(tea);
 
-    }, []);
+    };
+
+    updateTea();
+
+    window.addEventListener(
+        "teaChanged",
+        updateTea
+    );
+
+    return () => {
+
+        window.removeEventListener(
+            "teaChanged",
+            updateTea
+        );
+
+    };
+
+}, []);
 
     
 

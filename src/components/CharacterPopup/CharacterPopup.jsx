@@ -72,15 +72,31 @@ const [
 
     if (liked) {
 
-        setLikes((prev) => prev - 1);
+        setLikes(prev => prev - 1);
+
+        const tea = Math.max(
+            0,
+            (Number(localStorage.getItem("tea")) || 0) - 1
+        );
+
+        localStorage.setItem("tea", tea);
 
     }
 
     else {
 
-        setLikes((prev) => prev + 1);
+        setLikes(prev => prev + 1);
+
+        const tea =
+            (Number(localStorage.getItem("tea")) || 0) + 1;
+
+        localStorage.setItem("tea", tea);
 
     }
+
+    window.dispatchEvent(
+        new Event("teaChanged")
+    );
 
     setLiked(!liked);
 

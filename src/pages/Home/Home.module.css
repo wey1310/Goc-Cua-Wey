@@ -154,48 +154,6 @@ pageFade .6s cubic-bezier(.2,.8,.2,1);
 
 
 
-@keyframes borderGlow{
-
-
-    0%{
-
-
-        opacity:.45;
-
-
-        transform:scale(.98);
-
-
-    }
-
-
-    50%{
-
-
-        opacity:1;
-
-
-        transform:scale(1.02);
-
-
-    }
-
-
-    100%{
-
-
-        opacity:.45;
-
-
-        transform:scale(.98);
-
-
-    }
-
-
-}
-
-
 /* =====================================================
    SEARCH
 ===================================================== */

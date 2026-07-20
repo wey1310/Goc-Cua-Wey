@@ -151,7 +151,88 @@ pageFade .6s cubic-bezier(.2,.8,.2,1);
 }
 
 
+/* Vòng sáng */
+.counterWrapper::before{
 
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:-8px;
+
+
+    border-radius:30px;
+
+
+    pointer-events:none;
+
+
+    box-shadow:
+
+
+        0 0 10px rgba(255,243,170,.45),
+
+
+        0 0 25px rgba(255,235,120,.35),
+
+
+        0 0 45px rgba(255,225,90,.18);
+
+
+    opacity:.75;
+
+
+    animation:borderGlow 3s ease-in-out infinite;
+
+
+}
+
+
+
+
+@keyframes borderGlow{
+
+
+    0%{
+
+
+        opacity:.45;
+
+
+        transform:scale(.98);
+
+
+    }
+
+
+    50%{
+
+
+        opacity:1;
+
+
+        transform:scale(1.02);
+
+
+    }
+
+
+    100%{
+
+
+        opacity:.45;
+
+
+        transform:scale(.98);
+
+
+    }
+
+
+}
 
 
 /* =====================================================

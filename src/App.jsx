@@ -25,10 +25,10 @@ function App() {
                     element={<Landing />}
                 />
 
-                <Route
-                    path="/home"
-                    element={<Home />}
-                />
+<Route
+    path="/home"
+    element={<Home />}
+/>
 
                 <Route
                     path="/admin"

@@ -9,17 +9,11 @@ import leaf from "../../assets/ui/tea-leaf-card.png";
 
 function LoadingScene({
 
-    loading
+    loading,
+
+    progress = 0
 
 }) {
-
-    const [
-
-        progress,
-
-        setProgress
-
-    ] = useState(0);
 
     const [
 
@@ -35,136 +29,35 @@ function LoadingScene({
 
     useEffect(() => {
 
+        if (!loading) {
+
+            return;
+
+        }
+
+        setMessage(
+
+            transitionMessages[
+
+                Math.floor(
+
+                    Math.random() *
+
+                    transitionMessages.length
+
+                )
+
+            ]
+
+        );
+
+    }, [loading]);
+
     if (!loading) {
 
-        setProgress(0);
-
-        return;
+        return null;
 
     }
-
-    setMessage(
-
-        transitionMessages[
-
-            Math.floor(
-
-                Math.random() *
-
-                transitionMessages.length
-
-            )
-
-        ]
-
-    );
-
-    const duration = 3000;
-
-    const start = performance.now();
-
-    let frame;
-
-    let lastProgress = 0;
-
-    const animate = (now) => {
-
-        const elapsed = now - start;
-
-        const t = Math.min(
-
-            elapsed / duration,
-
-            1
-
-        );
-
-        // Tiến độ cơ bản
-        let target = t * 100;
-
-        // Dao động để tạo cảm giác load thật
-        const wave =
-
-            Math.sin(t * 18) * 3 +
-
-            Math.sin(t * 42) * 1.2;
-
-        target += wave;
-
-        // Không vượt quá tiến độ thực quá nhiều
-        target = Math.min(
-
-            target,
-
-            t * 100 + 2
-
-        );
-
-        // Không bao giờ lùi
-        target = Math.max(
-
-            target,
-
-            lastProgress
-
-        );
-
-        // Giữ lại chút ở cuối
-        if (
-
-            t < 0.95 &&
-
-            target > 96
-
-        ) {
-
-            target = 96;
-
-        }
-
-        lastProgress = target;
-
-        setProgress(target);
-
-        if (t < 1) {
-
-            frame = requestAnimationFrame(
-
-                animate
-
-            );
-
-        } else {
-
-            setProgress(100);
-
-        }
-
-    };
-
-    frame = requestAnimationFrame(
-
-        animate
-
-    );
-
-    return () => {
-
-        cancelAnimationFrame(
-
-            frame
-
-        );
-
-    };
-
-}, [loading]);
-
-
-
-
-
-    if (!loading) return null;
 
     return (
 
@@ -216,6 +109,8 @@ function LoadingScene({
 
                     className={styles.logo}
 
+                    draggable={false}
+
                 />
 
                 <h2>
@@ -246,6 +141,8 @@ function LoadingScene({
 
                             className={styles.runner}
 
+                            draggable={false}
+
                         />
 
                     </div>
@@ -257,6 +154,12 @@ function LoadingScene({
                     {message.subtitle}
 
                 </p>
+
+                <span className={styles.percent}>
+
+                    {Math.round(progress)}%
+
+                </span>
 
             </div>
 

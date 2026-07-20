@@ -16,6 +16,51 @@ import leaves from "../../assets/effect/leaves..gif";
 
 import LoadingScreen from "../../components/Transition/LoadingScreen";
 
+
+import preloadAssets from "../../utils/preloadAssets";
+
+// ===== Home Assets =====
+
+import homeBg from "../../assets/background/home-bg.webp";
+
+import homeHeading from "../../assets/ui/home-heading.png";
+
+import homeMusic from "../../assets/ui/home-music.png";
+
+import homeBack from "../../assets/ui/home-back.png";
+
+import homeBoardCounter from "../../assets/ui/home-board-counter.png";
+
+import searchBox from "../../assets/ui/search-box.png";
+
+import tagTemplate from "../../assets/ui/tag-template.png";
+
+import randomBoard from "../../assets/ui/randombroad.png";
+
+import randomBtn from "../../assets/ui/random.png";
+
+import rankingBoard from "../../assets/ui/rankingbroad.png";
+
+import top1 from "../../assets/ui/top1.png";
+
+import top2 from "../../assets/ui/top2.png";
+
+import top3 from "../../assets/ui/top3.png";
+
+import teaLeaf from "../../assets/ui/tea-leaf-card.png";
+
+import frame01 from "../../assets/effect/wey/frame01.png";
+
+import randomGif from "../../assets/effect/wey/random.gif";
+
+import randomLeaf from "../../assets/effect/random-leaf.webp";
+
+import bgMusic from "../../assets/music/garden.mp3";
+
+import randomSound from "../../assets/music/randomsound.mp3";
+
+
+
 function Landing() {
 
     const navigate = useNavigate();
@@ -26,6 +71,8 @@ function Landing() {
 
     const [loading, setLoading] = useState(false);
 
+    const [progress, setProgress] = useState(0);
+
     const openFacebook = () => {
 
         window.open(
@@ -35,19 +82,101 @@ function Landing() {
 
     };
 
-    const handleEnter = () => {
+    const handleEnter = async () => {
 
-        if (loading) return;
+    if (loading) {
 
-        setLoading(true);
+        return;
 
-        setTimeout(() => {
+    }
 
-            navigate("/home");
+    setLoading(true);
 
-        }, 3200);
+    const assets = [
 
-    };
+        { src: homeBg },
+
+        { src: homeHeading },
+
+        { src: homeMusic },
+
+        { src: homeBack },
+
+        { src: homeBoardCounter },
+
+        { src: searchBox },
+
+        { src: tagTemplate },
+
+        { src: randomBoard },
+
+        { src: randomBtn },
+
+        { src: rankingBoard },
+
+        { src: top1 },
+
+        { src: top2 },
+
+        { src: top3 },
+
+        { src: teaLeaf },
+
+        { src: frame01 },
+
+        { src: randomGif },
+
+        { src: randomLeaf },
+
+        {
+
+            src: bgMusic,
+
+            type: "audio"
+
+        },
+
+        {
+
+            src: randomSound,
+
+            type: "audio"
+
+        }
+
+    ];
+
+    const start = performance.now();
+
+    await preloadAssets(
+
+        assets,
+
+        setProgress
+
+    );
+
+    const elapsed = performance.now() - start;
+
+    if (elapsed < 2000) {
+
+        await new Promise(resolve =>
+
+            setTimeout(
+
+                resolve,
+
+                2000 - elapsed
+
+            )
+
+        );
+
+    }
+
+    navigate("/home");
+
+};
 
     const confirmPassword = () => {
 
@@ -202,8 +331,12 @@ function Landing() {
             )}
 
             <LoadingScreen
-                loading={loading}
-            />
+
+    loading={loading}
+
+    progress={progress}
+
+/>
 
         </div>
 

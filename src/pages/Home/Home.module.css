@@ -1158,7 +1158,17 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     .container{
 
-        background-attachment:scroll;
+        background-attachment:auto;
+
+    }
+
+    .heading{
+        width:100%;
+
+    }
+
+    .counterWrapper{
+        width:100%;
 
     }
 
@@ -1196,27 +1206,27 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     .avatar{
 
-        width:60px;
+        width:80px;
 
-        height:60px;
+        height:80px;
 
-        top:20px;
+        top:10px;
 
     }
 
     .characterCard h2{
 
-        top:90px;
+        top:100px;
 
         left:50%;
 
-        width:82%;
+        width:86%;
 
         transform:translateX(-50%);
 
         text-align:center;
 
-        font-size:10px;
+        font-size:13px;
 
         line-height:1.15;
 
@@ -1224,7 +1234,7 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     .characterCard p{
 
-        top:110px;
+        top:125px;
 
         width:82%;
 
@@ -1236,14 +1246,14 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     .tagContainer{
 
-        gap:10px;
+        gap:5px;
 
     }
 
     .tag img,
     .activeTag img{
 
-        width:90px;
+        width:100px;
 
     }
 
@@ -1255,7 +1265,7 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     .searchBox{
 
-        height:66px;
+        height:40px;
 
         object-fit:fill;
 
@@ -1263,15 +1273,17 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     .searchInput{
 
-        font-size:17px;
+        font-size:15px;
 
-        padding-left:64px;
+        padding-left:40px;
 
     }
 
     .searchIcon{
 
-        width:26px;
+        width:30px;
+
+        left: 10px
 
     }
 

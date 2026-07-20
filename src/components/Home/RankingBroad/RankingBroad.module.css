@@ -250,15 +250,15 @@
 
         --board-width:95vw;
 
-        --board-height:260px;
+        --board-height:170px;
 
     }
 
     .content{
 
-        padding-top:25%;
+        padding-top:23%;
 
-        transform:translateX(14px);
+        transform:translateX(7px);
 
     }
 
@@ -276,9 +276,9 @@
 
     .name{
 
-        top:84%;
+        top:82%;
 
-        font-size:11px;
+        font-size:6px;
 
     }
 

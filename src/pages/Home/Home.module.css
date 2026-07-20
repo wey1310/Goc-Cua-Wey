@@ -1055,6 +1055,105 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
 }
 
+
+.searchArea:focus-within{
+
+    filter:
+
+        drop-shadow(
+
+            0 0 14px rgba(255,245,180,.75)
+
+        );
+
+}
+
+.searchInput:focus{
+
+    color:#345027;
+
+}
+
+
+.activeTag::after{
+
+    content:"🌸";
+
+    position:absolute;
+
+    top:17px;
+
+    right:-1px;
+
+    font-size:20px;
+
+    animation:leafFloat 1.8s infinite;
+
+}
+
+@keyframes leafFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-4px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   BROAD SECTION
+===================================================== */
+
+.broadSection{
+
+    width:min(95%,1280px);
+
+    margin:40px auto 55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    gap:clamp(20px,2vw,40px);
+
+    flex-wrap:wrap;
+
+}
+
+/* =====================================================
+   BROAD RESPONSIVE
+===================================================== */
+
+@media(max-width:1024px){
+
+    .broadSection{
+
+        gap:28px;
+
+    }
+
+}
+
+
+/* =====================================================
+    RESPONSIVE
+===================================================== */
 @media (max-width:768px){
 
     .container{
@@ -1190,102 +1289,6 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
 }
 
-
-
-.searchArea:focus-within{
-
-    filter:
-
-        drop-shadow(
-
-            0 0 14px rgba(255,245,180,.75)
-
-        );
-
-}
-
-.searchInput:focus{
-
-    color:#345027;
-
-}
-
-
-.activeTag::after{
-
-    content:"🌸";
-
-    position:absolute;
-
-    top:17px;
-
-    right:-1px;
-
-    font-size:20px;
-
-    animation:leafFloat 1.8s infinite;
-
-}
-
-@keyframes leafFloat{
-
-    0%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-4px);
-
-    }
-
-    100%{
-
-        transform:translateY(0);
-
-    }
-
-}
-
-
-/* =====================================================
-   BROAD SECTION
-===================================================== */
-
-.broadSection{
-
-    width:min(95%,1280px);
-
-    margin:40px auto 55px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:flex-end;
-
-    gap:clamp(20px,2vw,40px);
-
-    flex-wrap:wrap;
-
-}
-
-/* =====================================================
-   BROAD RESPONSIVE
-===================================================== */
-
-@media(max-width:1024px){
-
-    .broadSection{
-
-        gap:28px;
-
-    }
-
-}
-
 @media(max-width:768px){
 
     .broadSection{
@@ -1303,15 +1306,3 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
 
 
-
-
-
-@media (max-width:768px){
-
-    body{
-
-        background:red !important;
-
-    }
-
-}

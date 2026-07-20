@@ -1174,7 +1174,7 @@ transform:translateY(-4px);
 
     }
 
-    .characterCard h2{
+.characterCard h2{
 
     top:160px;
 
@@ -1183,6 +1183,31 @@ transform:translateY(-4px);
 .characterCard p{
 
     top:190px;
+
+}
+
+
+.characterCard h2{
+
+    width:82%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    text-align:center;
+
+    line-height:1.15;
+
+}
+
+.characterCard p{
+
+    top:188px;
+
+    font-size:14px;
+
+    line-height:1.35;
 
 }
 
@@ -1215,17 +1240,6 @@ transform:translateY(-4px);
 
 }
 
-.characterCard h2{
-
-    top:140px;
-
-}
-
-.characterCard p{
-
-    top:170px;
-
-}
 
 
 .searchArea:focus-within{

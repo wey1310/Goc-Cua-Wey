@@ -170,7 +170,7 @@ const RandomBroad = forwardRef(({
 
         setPhase("leaf");
 
-    }, 300);
+    }, 3000);
 
     return () => clearTimeout(timer);
 

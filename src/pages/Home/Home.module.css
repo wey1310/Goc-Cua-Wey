@@ -1103,7 +1103,7 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     .characterCard h2{
 
-        top:128px;
+        top:118px;
 
         left:50%;
 
@@ -1113,7 +1113,7 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
         text-align:center;
 
-        font-size:16px;
+        font-size:13px;
 
         line-height:1.15;
 
@@ -1121,11 +1121,11 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     .characterCard p{
 
-        top:150px;
+        top:130px;
 
         width:82%;
 
-        font-size:11px;
+        font-size:10px;
 
         line-height:1.3;
 

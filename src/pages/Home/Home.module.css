@@ -72,6 +72,10 @@ pageFade .6s cubic-bezier(.2,.8,.2,1);
 
     margin:10px auto 0;
 
+    transition:
+
+        transform .3s;
+
 }
 
 .counterWrapper:hover{
@@ -151,89 +155,6 @@ pageFade .6s cubic-bezier(.2,.8,.2,1);
 }
 
 
-/* Vòng sáng */
-.counterWrapper::before{
-
-
-    content:"";
-
-
-    position:absolute;
-
-
-    inset:-8px;
-
-
-    border-radius:30px;
-
-
-    pointer-events:none;
-
-
-    box-shadow:
-
-
-        0 0 10px rgba(255,243,170,.45),
-
-
-        0 0 25px rgba(255,235,120,.35),
-
-
-        0 0 45px rgba(255,225,90,.18);
-
-
-    opacity:.75;
-
-
-    animation:borderGlow 3s ease-in-out infinite;
-
-
-}
-
-
-
-
-@keyframes borderGlow{
-
-
-    0%{
-
-
-        opacity:.45;
-
-
-        transform:scale(.98);
-
-
-    }
-
-
-    50%{
-
-
-        opacity:1;
-
-
-        transform:scale(1.02);
-
-
-    }
-
-
-    100%{
-
-
-        opacity:.45;
-
-
-        transform:scale(.98);
-
-
-    }
-
-
-}
-
 
 /* =====================================================
    SEARCH
@@ -246,6 +167,12 @@ pageFade .6s cubic-bezier(.2,.8,.2,1);
     width:min(90%,760px);
 
     margin:42px auto 0;
+
+    transition:
+
+        transform .3s,
+
+        filter .3s;
 
 }
 
@@ -307,12 +234,6 @@ pageFade .6s cubic-bezier(.2,.8,.2,1);
 
 }
 
-.searchArea{
-
-    transition:.3s;
-
-}
-
 .searchArea:hover{
 
     transform:scale(1.01);
@@ -337,10 +258,9 @@ pageFade .6s cubic-bezier(.2,.8,.2,1);
 
     flex-wrap:wrap;
 
-    gap:20px;
-    column-gap:10px;   /* khoảng cách ngang */
-    row-gap:0px;      /* khoảng cách dọc */
+    column-gap:10px;
 
+    row-gap:0;
 
 }
 
@@ -355,7 +275,11 @@ pageFade .6s cubic-bezier(.2,.8,.2,1);
 
     cursor:pointer;
 
-    transition:.25s;
+    transition:
+
+        transform .25s,
+
+        filter .25s;
 
     animation:tagGlow 2s infinite;
 
@@ -482,36 +406,37 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     animation:cardAppear .7s ease;
 
-    transition:
-
-    transform .35s cubic-bezier(.2,.8,.2,1),
-
-    filter .35s,
-
-    box-shadow .35s;
-
     box-shadow:
 
-0 6px 18px rgba(0,0,0,.12);
+        0 6px 18px rgba(0,0,0,.12);
+
+    transition:
+
+        transform .35s cubic-bezier(.2,.8,.2,1),
+
+        filter .35s,
+
+        box-shadow .35s;
 
 }
 
 .characterCard:hover{
 
     transform:
+
         translateY(-12px)
+
         rotate(-2deg)
+
         scale(1.04);
 
     filter:
 
         brightness(1.04);
 
-
     box-shadow:
 
-0 16px 36px rgba(0,0,0,.22);
-
+        0 16px 36px rgba(0,0,0,.22);
 
 }
 
@@ -547,14 +472,17 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     pointer-events:none;
 
-    transition:.3s;
+    transition:
+
+        box-shadow .3s;
 
 }
 
 .characterCard:hover::after{
 
     box-shadow:
-    0 0 35px rgba(255,255,210,.45);
+
+        0 0 35px rgba(255,255,210,.45);
 
 }
 
@@ -573,25 +501,12 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     transition:
 
-    transform .35s,
+        transform .35s,
 
-    filter .35s;
-
-}
-
-.characterCard:hover .leafCard{
-
-    filter:
-
-        drop-shadow(
-
-            0 0 14px
-
-            rgba(255,240,170,.45)
-
-        );
+        filter .35s;
 
 }
+
 
 @keyframes leafSwing{
 
@@ -618,11 +533,18 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 .characterCard:hover .leafCard{
 
     filter:
+
         brightness(1.08)
-        drop-shadow(0 0 18px rgba(255,255,180,.75));
+
+        drop-shadow(
+
+            0 0 18px
+
+            rgba(255,255,180,.75)
+
+        );
 
 }
-
 
 /* =====================================================
    AVATAR
@@ -636,8 +558,6 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     top:26px;
 
-    transform:translateX(-50%);
-
     width:120px;
 
     height:120px;
@@ -646,23 +566,26 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     object-fit:cover;
 
+    transform:translateX(-50%);
+
     transition:
 
-    transform .35s,
+        transform .35s,
 
-    filter .35s;
-
-    
+        filter .35s;
 
 }
 
 .characterCard:hover .avatar{
 
     transform:
+
         translateX(-50%)
+
         scale(1.12);
 
     filter:
+
         brightness(1.05);
 
 }
@@ -674,35 +597,19 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
 .characterCard h2{
 
-
-
     position:absolute;
 
-
-
-    top: 160px;
-
-
+    top:160px;
 
     width:100%;
 
-
-
     margin:0;
-
-
 
     text-align:center;
 
-
-
     color:#fff;
 
-
-
     font-size:clamp(18px,1.6vw,26px);
-
-
 
     text-shadow:
 
@@ -710,9 +617,9 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     transition:
 
-    color .3s,
+        color .3s,
 
-    transform .3s;
+        transform .3s;
 
 }
 
@@ -720,9 +627,7 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     color:#ffaad3;
 
-    transform:
-
-        scale(1.03);
+    transform:scale(1.03);
 
 }
 
@@ -733,8 +638,6 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
     top:195px;
 
     left:50%;
-
-    transform:translateX(-50%);
 
     width:80%;
 
@@ -748,9 +651,11 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     line-height:1.45;
 
+    transform:translateX(-50%);
+
     transition:
 
-    opacity .3s;
+        opacity .3s;
 
 }
 
@@ -770,26 +675,32 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
     position:fixed;
 
     right:28px;
+
     bottom:25px;
 
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
     border:none;
+
     background:none;
 
     cursor:pointer;
 
     z-index:999;
 
-    transition:.3s;
+    transition:
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+        transform .3s;
 
 }
 
 .musicButton:hover{
 
-transform:translateY(-4px);
+    transform:translateY(-4px);
 
 }
 
@@ -799,14 +710,18 @@ transform:translateY(-4px);
 
     animation:musicFloat 4s ease-in-out infinite;
 
-    transition:.3s;
+    transition:
+
+        transform .3s;
 
 }
 
 .musicButton:hover img{
 
     transform:
+
         rotate(8deg)
+
         scale(1.08);
 
 }
@@ -868,7 +783,9 @@ transform:translateY(-4px);
 .musicButton:hover .musicOff{
 
     transform:
+
         translate(2px,-2px)
+
         scale(1.08);
 
 }
@@ -922,14 +839,15 @@ transform:translateY(-4px);
 
     width:88px;
 
-    transition:.3s;
+    transition:
+
+        transform .3s;
 
 }
 
 .backButton:hover img{
 
-    transform:
-        translateY(-6px);
+    transform:translateY(-6px);
 
 }
 
@@ -1107,9 +1025,6 @@ transform:translateY(-4px);
 
     }
 
-}
-
-
     .searchInput{
 
         font-size:16px;
@@ -1137,6 +1052,8 @@ transform:translateY(-4px);
         width:64px;
 
     }
+
+}
 
 
 
@@ -1255,6 +1172,7 @@ transform:translateY(-4px);
 
     }
 
+
     .musicButton img{
 
         width:58px;
@@ -1293,39 +1211,12 @@ transform:translateY(-4px);
 
 }
 
-.searchArea{
-
-    width:95%;
-
-}
-
-.searchBox{
-
-    height:66px;
-
-    object-fit:fill;
-
-}
-
-.searchInput{
-
-    font-size:17px;
-
-    padding-left:64px;
-
-}
-
-.searchIcon{
-
-    width:26px;
-
-}
-
 .searchInput:focus{
 
     color:#345027;
 
 }
+
 
 .activeTag::after{
 

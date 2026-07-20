@@ -254,7 +254,29 @@
 
     }
 
+    .content{
+
+        padding-top:22%;
+
+        transform:translateX(14px);
+
+    }
+
+    .frame{
+
+        width:82%;
+
+    }
+
+    .avatar{
+
+        top:15%;
+
+    }
+
     .name{
+
+        top:84%;
 
         font-size:11px;
 

@@ -1184,6 +1184,34 @@ transform:translateY(-4px);
 
 }
 
+.searchArea{
+
+    width:95%;
+
+}
+
+.searchBox{
+
+    height:66px;
+
+    object-fit:fill;
+
+}
+
+.searchInput{
+
+    font-size:17px;
+
+    padding-left:64px;
+
+}
+
+.searchIcon{
+
+    width:26px;
+
+}
+
 .searchInput:focus{
 
     color:#345027;

@@ -1174,6 +1174,20 @@ transform:translateY(-4px);
 
     }
 
+    .characterCard h2{
+
+    top:170px;
+
+}
+
+.characterCard p{
+
+    top:205px;
+
+}
+
+
+
     .tagContainer{
 
         gap:10px;

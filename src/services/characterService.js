@@ -7,7 +7,9 @@ import {
     updateDoc,
     deleteDoc,
     doc,
-    increment
+    increment,
+    getDoc,
+    onSnapshot
 } from "firebase/firestore";
 
 const COLLECTION = "characters";
@@ -26,6 +28,37 @@ export async function getCharacters() {
         id: item.id,
         ...item.data()
     }));
+
+}
+
+
+// =======================
+// Realtime Characters
+// =======================
+
+export function subscribeCharacters(callback) {
+
+    return onSnapshot(
+
+        collection(db, COLLECTION),
+
+        snapshot => {
+
+            callback(
+
+                snapshot.docs.map(item => ({
+
+                    id: item.id,
+
+                    ...item.data()
+
+                }))
+
+            );
+
+        }
+
+    );
 
 }
 
@@ -94,6 +127,38 @@ export async function increaseGGAIClick(id) {
 
 }
 
+
+// =======================
+// Tăng lượt xem
+// =======================
+
+export async function increaseView(id) {
+
+    const ref = doc(
+
+        db,
+
+        COLLECTION,
+
+        id
+
+    );
+
+    await updateDoc(
+
+        ref,
+
+        {
+
+            views: increment(1)
+
+        }
+
+    );
+
+}
+
+
 // =======================
 // Xóa
 // =======================
@@ -103,5 +168,51 @@ export async function removeCharacter(id) {
     await deleteDoc(
         doc(db, COLLECTION, id)
     );
+
+}
+
+// =======================
+// GLOBAL STATS
+// =======================
+
+const STATS = "stats";
+
+export async function getGlobalStats() {
+
+    const ref = doc(
+        db,
+        STATS,
+        "global"
+    );
+
+    const snapshot = await getDoc(ref);
+
+    if (!snapshot.exists()) {
+
+        return {
+
+    visitCount: 0
+
+};
+
+    }
+
+    return snapshot.data();
+
+}
+
+export async function increaseVisitCount() {
+
+    const ref = doc(
+        db,
+        STATS,
+        "global"
+    );
+
+    await updateDoc(ref, {
+
+        visitCount: increment(1)
+
+    });
 
 }

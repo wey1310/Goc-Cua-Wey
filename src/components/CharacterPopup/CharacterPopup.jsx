@@ -33,7 +33,9 @@ function CharacterPopup({
 
     onClose,
 
-    onRefresh
+    onRefresh,
+
+    onTeaIncrease
 
 }) {
 
@@ -189,7 +191,7 @@ const [
 
 );
 
-await onRefresh?.();
+onTeaIncrease?.();
 
         }
 

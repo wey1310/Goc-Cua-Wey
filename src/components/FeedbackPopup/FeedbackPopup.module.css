@@ -698,23 +698,15 @@
 
     align-items:center;
 
-    font-size:17px;
+    font-size:24px;
 
     font-weight:700;
 
-    color:#ffffff;
+    color:inherit;
 
     background:
 
-        linear-gradient(
-
-            135deg,
-
-            #90b16b,
-
-            #6e8f49
-
-        );
+    #ffffff;
 
     box-shadow:
 

@@ -331,6 +331,100 @@ function FeedbackPopup({
 
     ]);
 
+
+/* =====================================================
+   BUBBLE STYLE
+===================================================== */
+
+const BUBBLE_COLORS = [
+
+    "#FFF4E8",
+
+    "#FDF0F6",
+
+    "#EEF9F2",
+
+    "#EDF5FF",
+
+    "#FFF8E5",
+
+    "#F4F1FF"
+
+];
+
+const FLOWERS = [
+
+    "🌸",
+
+    "🌼",
+
+    "🌷",
+
+    "🌺",
+
+    "🪻",
+
+    "🌻"
+
+];
+
+function hashString(str){
+
+    let hash = 0;
+
+    for(
+
+        let i = 0;
+
+        i < str.length;
+
+        i++
+
+    ){
+
+        hash =
+
+            str.charCodeAt(i) +
+
+            ((hash << 5) - hash);
+
+    }
+
+    return Math.abs(hash);
+
+}
+
+function getBubbleStyle(id){
+
+    const index =
+
+        hashString(id) %
+
+        BUBBLE_COLORS.length;
+
+    return {
+
+        background:
+
+            BUBBLE_COLORS[index]
+
+    };
+
+}
+
+function getAvatar(id){
+
+    return FLOWERS[
+
+        hashString(id) %
+
+        FLOWERS.length
+
+    ];
+
+}
+
+
     /* =====================================================
        TIME FORMAT
     ===================================================== */
@@ -1153,25 +1247,26 @@ useEffect(() => {
 
                                                             className={styles.feedbackBubble}
 
+style={
+
+    getBubbleStyle(item.id)
+
+}
+
                                                         >
 
                                                             <div className={styles.feedbackTop}>
 
                                                                 <div className={styles.userInfo}>
+<div className={styles.avatar}>
 
-                                                                    <div className={styles.avatar}>
+    {
 
-                                                                        {
+        getAvatar(item.id)
 
-                                                                            item.name
+    }
 
-                                                                                .charAt(0)
-
-                                                                                .toUpperCase()
-
-                                                                        }
-
-                                                                    </div>
+</div>
 
                                                                     <div>
 

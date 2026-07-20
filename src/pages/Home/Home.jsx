@@ -17,7 +17,12 @@ import RankingBroad from "../../components/Home/RankingBroad/RankingBroad";
 import CharacterPopup from "../../components/CharacterPopup/CharacterPopup";
 
 import useCharacters from "../../hooks/useCharacters";
-import { updateCharacter } from "../../services/characterService";
+import {
+    updateCharacter,
+    getGlobalStats,
+    increaseVisitCount,
+    increaseView
+} from "../../services/characterService";
 
 
 function Home() {
@@ -30,13 +35,15 @@ function Home() {
 
     const [
 
-        characters,
+    characters,
 
-        ,
+    setCharacters,
 
-        loadCharacters
+    loadCharacters,
 
-    ] = useCharacters();
+    
+
+] = useCharacters();
 
     const [
 
@@ -78,13 +85,19 @@ function Home() {
 
     ] = useState(0);
 
-    const [
+    const teaCount = useMemo(() => {
 
-        teaCount,
+    return characters.reduce(
 
-        setTeaCount
+        (sum, item) =>
 
-    ] = useState(0);
+            sum + Number(item.ggaiClick || 0),
+
+        0
+
+    );
+
+}, [characters]);
 
     // ================= MUSIC =================
 
@@ -122,62 +135,51 @@ function Home() {
 
 };
 
-    // ================= VISIT =================
 
-    useEffect(() => {
+// ================= GLOBAL STATS =================
 
-        let visit =
+useEffect(() => {
 
-            Number(
+    async function loadStats() {
 
-                localStorage.getItem("visit")
+        if (
 
-            ) || 0;
+            !sessionStorage.getItem("visited")
 
-        visit++;
+        ) {
 
-        localStorage.setItem(
+            await increaseVisitCount();
 
-            "visit",
+            sessionStorage.setItem(
 
-            visit
+                "visited",
+
+                "true"
+
+            );
+
+        }
+
+        const stats = await getGlobalStats();
+
+        setVisitCount(
+
+            stats.visitCount || 0
 
         );
 
-        setVisitCount(visit);
 
-    }, []);
 
-    // ================= TEA =================
+    }
 
-    useEffect(() => {
-
-    const updateTea = () => {
-
-        const tea =
-            Number(localStorage.getItem("tea")) || 0;
-
-        setTeaCount(tea);
-
-    };
-
-    updateTea();
-
-    window.addEventListener(
-        "teaChanged",
-        updateTea
-    );
-
-    return () => {
-
-        window.removeEventListener(
-            "teaChanged",
-            updateTea
-        );
-
-    };
+    loadStats();
 
 }, []);
+
+// ================= TEA =================
+
+
+
 
     
 
@@ -193,19 +195,23 @@ function Home() {
 
     };
 
-    // Popup mở ngay
-
     setSelectedCharacter(updated);
 
-    // Firestore chạy nền
+    setCharacters(prev =>
 
-    updateCharacter(updated)
+        prev.map(item =>
 
-    .then(() => {
+            item.id === character.id
 
-        loadCharacters();
+                ? updated
 
-    })
+                : item
+
+        )
+
+    );
+
+    increaseView(character.id)
 
     .catch(error => {
 
@@ -230,6 +236,33 @@ function Home() {
     );
 
     randomBroadRef.current?.reset();
+
+};
+
+
+const increaseTea = (characterId) => {
+
+    setCharacters(prev =>
+
+        prev.map(item =>
+
+            item.id === characterId
+
+                ? {
+
+                    ...item,
+
+                    ggaiClick:
+
+                        (item.ggaiClick || 0) + 1
+
+                }
+
+                : item
+
+        )
+
+    );
 
 };
 
@@ -443,7 +476,7 @@ function Home() {
 
     onClose={closePopup}
 
-    onRefresh={loadCharacters}
+    onTeaIncrease={increaseTea}
 
 />
 

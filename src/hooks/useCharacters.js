@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 
-import { getCharacters } from "../services/characterService";
+import {
+
+    subscribeCharacters
+
+} from "../services/characterService";
 
 export default function useCharacters() {
 
@@ -20,35 +24,29 @@ const [
 
 ] = useState(true);
 
-const loadCharacters = async () => {
+const loadCharacters = () => {
 
-    try {
+    setLoading(true);
 
-        setLoading(true);
-
-        const data = await getCharacters();
+    return subscribeCharacters(data => {
 
         setCharacters(data);
 
-    }
-
-    catch (error) {
-
-        console.error(error);
-
-    }
-
-    finally {
-
         setLoading(false);
 
-    }
+    });
 
 };
 
 useEffect(() => {
 
-    void loadCharacters();
+    const unsubscribe = loadCharacters();
+
+    return () => {
+
+        unsubscribe();
+
+    };
 
 }, []);
 

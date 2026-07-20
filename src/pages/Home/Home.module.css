@@ -1176,6 +1176,8 @@ transform:translateY(-4px);
 
 .characterCard h2{
 
+    top:148px;
+
     width:82%;
 
     left:50%;
@@ -1190,7 +1192,7 @@ transform:translateY(-4px);
 
 .characterCard p{
 
-    top:188px;
+    top:178px;
 
     font-size:14px;
 

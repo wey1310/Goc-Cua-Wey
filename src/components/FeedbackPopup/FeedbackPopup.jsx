@@ -438,11 +438,15 @@ function hashString(str){
 
 }
 
-function getTheme(id){
+function getTheme(key){
 
     return FLOWER_THEMES[
 
-        hashString(id) %
+        hashString(
+
+            key.trim().toLowerCase()
+
+        ) %
 
         FLOWER_THEMES.length
 
@@ -450,9 +454,9 @@ function getTheme(id){
 
 }
 
-function getAvatar(id){
+function getAvatar(key){
 
-    return getTheme(id).avatar;
+    return getTheme(key).avatar;
 
 }
 
@@ -1283,19 +1287,19 @@ style={{
 
     "--card-bg":
 
-        getTheme(item.id).card,
+        getTheme(item.name).card,
 
     "--bubble-bg":
 
-        getTheme(item.id).bubble,
+        getTheme(item.name).bubble,
 
     "--avatar-bg":
 
-        getTheme(item.id).card,
+        getTheme(item.name).card,
 
     "--delete-color":
 
-        getTheme(item.id).delete
+        getTheme(item.name).delete
 
 }}
 
@@ -1308,7 +1312,7 @@ style={{
 
     {
 
-        getAvatar(item.id)
+        getAvatar(item.name)
 
     }
 

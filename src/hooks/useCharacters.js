@@ -6,7 +6,11 @@ import {
 
 } from "../services/characterService";
 
-export default function useCharacters() {
+export default function useCharacters(
+
+    initialCharacters = []
+
+) {
 
     const [
 
@@ -14,7 +18,11 @@ export default function useCharacters() {
 
     setCharacters
 
-] = useState([]);
+] = useState(
+
+    initialCharacters
+
+);
 
 const [
 
@@ -22,19 +30,25 @@ const [
 
     setLoading
 
-] = useState(true);
+] = useState(
+
+    initialCharacters.length === 0
+
+);
 
 const loadCharacters = () => {
 
-    setLoading(true);
+    return subscribeCharacters(
 
-    return subscribeCharacters(data => {
+        data => {
 
-        setCharacters(data);
+            setCharacters(data);
 
-        setLoading(false);
+            setLoading(false);
 
-    });
+        }
+
+    );
 
 };
 

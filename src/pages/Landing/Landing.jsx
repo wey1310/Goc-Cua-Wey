@@ -18,6 +18,11 @@ import LoadingScreen from "../../components/Transition/LoadingScreen";
 
 
 import preloadAssets from "../../utils/preloadAssets";
+import {
+
+    getCharacters
+
+} from "../../services/characterService";
 
 // ===== Home Assets =====
 
@@ -156,6 +161,54 @@ function Landing() {
 
     );
 
+    const characters =
+
+    await getCharacters();
+
+    await Promise.all(
+
+    characters.map(
+
+        character => {
+
+            if (
+
+                !character.avatar
+
+            ) {
+
+                return Promise.resolve();
+
+            }
+
+            return new Promise(
+
+                resolve => {
+
+                    const img = new Image();
+
+                    img.src =
+
+                    character.avatar;
+
+                    img.onload =
+
+                        resolve;
+
+                    img.onerror =
+
+                        resolve;
+
+                }
+
+            );
+
+        }
+
+    )
+
+);
+
     const elapsed = performance.now() - start;
 
     if (elapsed < 2000) {
@@ -174,7 +227,21 @@ function Landing() {
 
     }
 
-    navigate("/home");
+    navigate(
+
+    "/home",
+
+    {
+
+        state: {
+
+            characters
+
+        }
+
+    }
+
+);
 
 };
 

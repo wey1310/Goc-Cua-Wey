@@ -1,5 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {
+
+    useLocation,
+
+    useNavigate
+
+} from "react-router-dom";
 
 import styles from "./Home.module.css";
 
@@ -29,6 +35,10 @@ function Home() {
 
     const navigate = useNavigate();
 
+    const location =
+
+    useLocation();
+
     const audioRef = useRef(null);
 
     const randomBroadRef = useRef(null);
@@ -41,9 +51,11 @@ function Home() {
 
     loadCharacters,
 
-    
+] = useCharacters(
 
-] = useCharacters();
+    location.state?.characters || []
+
+);
 
     const [
 

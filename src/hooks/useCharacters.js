@@ -42,7 +42,23 @@ const loadCharacters = () => {
 
         data => {
 
-            setCharacters(data);
+            setCharacters(prev => {
+
+                if (
+
+                    JSON.stringify(prev) ===
+
+                    JSON.stringify(data)
+
+                ) {
+
+                    return prev;
+
+                }
+
+                return data;
+
+            });
 
             setLoading(false);
 

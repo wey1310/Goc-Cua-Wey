@@ -12,7 +12,23 @@ function preloadImage(src) {
 
         const img = new Image();
 
-        img.onload = resolve;
+        img.onload = async () => {
+
+            if (img.decode) {
+
+                try {
+
+                    await img.decode();
+
+                }
+
+                catch {}
+
+            }
+
+            resolve();
+
+        };
 
         img.onerror = resolve;
 

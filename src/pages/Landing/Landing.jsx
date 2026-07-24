@@ -153,7 +153,9 @@ function Landing() {
 
     const start = performance.now();
 
-    await preloadAssets(
+    const preloadPromise =
+
+    preloadAssets(
 
         assets,
 
@@ -161,9 +163,15 @@ function Landing() {
 
     );
 
-    const characters =
+const charactersPromise =
 
-    await getCharacters();
+    getCharacters();
+
+await preloadPromise;
+
+const characters =
+
+    await charactersPromise;
 
     await Promise.all(
 
@@ -187,17 +195,35 @@ function Landing() {
 
                     const img = new Image();
 
-                    img.src =
+img.onload = async () => {
 
-                    character.avatar;
+    if (
 
-                    img.onload =
+        img.decode
 
-                        resolve;
+    ) {
 
-                    img.onerror =
+        try {
 
-                        resolve;
+            await img.decode();
+
+        }
+
+        catch {}
+
+    }
+
+    resolve();
+
+};
+
+img.onerror =
+
+    resolve;
+
+img.src =
+
+character.avatar;
 
                 }
 

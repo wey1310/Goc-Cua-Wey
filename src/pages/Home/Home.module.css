@@ -3,21 +3,95 @@
 ===================================================== */
 
 .container{
+
     position:relative;
+
     width:100%;
+
     min-height:100vh;
 
     overflow-x:hidden;
 
-    background:url("/assets/background/home-bg.webp");
-    background-repeat:no-repeat;
-    background-position:center top;
-    background-size:cover;
-    background-attachment:fixed;
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(255,255,255,.65),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #f7faef 0%,
+            #eef6e2 35%,
+            #e8f1d8 100%
+        );
 
     animation:
+        pageFade .6s cubic-bezier(.2,.8,.2,1);
 
-pageFade .6s cubic-bezier(.2,.8,.2,1);
+}
+
+.container::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+
+            rgba(255,255,255,.28),
+
+            transparent 60%
+
+        );
+
+    background-position:
+
+        top left;
+
+    background-size:
+
+        700px 700px;
+
+    opacity:.9;
+
+    z-index:0;
+
+}
+
+.container::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.05;
+
+    background-image:
+
+        radial-gradient(
+
+            #9db37c 1px,
+
+            transparent 1px
+
+        );
+
+    background-size:
+
+        34px 34px;
+
+    z-index:0;
+
 }
 
 
@@ -871,104 +945,6 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
         opacity:1;
 
         transform:translateY(0);
-
-    }
-
-}
-
-
-/* =====================================================
-   FLOATING LEAF
-===================================================== */
-
-.container::before,
-.container::after{
-
-    content:"🍃";
-
-    position:fixed;
-
-    pointer-events:none;
-
-    opacity:.18;
-
-    font-size:38px;
-
-    z-index:1;
-
-}
-
-.container::before{
-
-    left:12%;
-
-    top:-60px;
-
-    animation:leafFall1 18s linear infinite;
-
-}
-
-.container::after{
-
-    right:15%;
-
-    top:-120px;
-
-    animation:leafFall2 22s linear infinite;
-
-}
-
-@keyframes leafFall1{
-
-    0%{
-
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-    }
-
-    50%{
-
-        transform:
-            translate(-45px,55vh)
-            rotate(180deg);
-
-    }
-
-    100%{
-
-        transform:
-            translate(40px,110vh)
-            rotate(360deg);
-
-    }
-
-}
-
-@keyframes leafFall2{
-
-    0%{
-
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-    }
-
-    50%{
-
-        transform:
-            translate(60px,60vh)
-            rotate(-180deg);
-
-    }
-
-    100%{
-
-        transform:
-            translate(-35px,110vh)
-            rotate(-360deg);
 
     }
 

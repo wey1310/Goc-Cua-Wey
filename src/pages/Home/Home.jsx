@@ -391,6 +391,49 @@ const increaseTea = (characterId) => {
     return (
 
         <div className={styles.container}>
+        <div className={styles.leafDecor}>
+
+    <img
+
+        src="/decoration/leaf1.svg"
+
+        className={styles.leaf1}
+
+        alt=""
+
+    />
+
+    <img
+
+        src="/decoration/leaf1.svg"
+
+        className={styles.leaf2}
+
+        alt=""
+
+    />
+
+    <img
+
+        src="/decoration/leaf1.svg"
+
+        className={styles.leaf3}
+
+        alt=""
+
+    />
+
+    <img
+
+        src="/decoration/leaf1.svg"
+
+        className={styles.leaf4}
+
+        alt=""
+
+    />
+
+</div>
 
             <audio
 

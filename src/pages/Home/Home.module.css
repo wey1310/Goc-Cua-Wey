@@ -12,55 +12,41 @@
 
     overflow-x:hidden;
 
+    isolation:isolate;
+
     background:
-        radial-gradient(
-            circle at top left,
-            rgba(255,255,255,.65),
-            transparent 35%
-        ),
-        linear-gradient(
-            180deg,
-            #f7faef 0%,
-            #eef6e2 35%,
-            #e8f1d8 100%
-        );
+
+    radial-gradient(
+
+        circle at top left,
+
+        rgba(255,255,255,.68) 0%,
+
+        rgba(255,255,255,.24) 26%,
+
+        transparent 46%
+
+    ),
+
+    linear-gradient(
+
+        180deg,
+
+        #F9FCF5 0%,
+
+        #F2F8EA 18%,
+
+        #ECF4E3 45%,
+
+        #E5F0D7 72%,
+
+        #DFEBCF 100%
+
+    );
 
     animation:
+
         pageFade .6s cubic-bezier(.2,.8,.2,1);
-
-}
-
-.container::before{
-
-    content:"";
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-    background:
-
-        radial-gradient(
-
-            rgba(255,255,255,.28),
-
-            transparent 60%
-
-        );
-
-    background-position:
-
-        top left;
-
-    background-size:
-
-        700px 700px;
-
-    opacity:.9;
-
-    z-index:0;
 
 }
 
@@ -74,23 +60,41 @@
 
     pointer-events:none;
 
-    opacity:.05;
-
-    background-image:
+    background:
 
         radial-gradient(
 
-            #9db37c 1px,
+            circle at 50% -10%,
 
-            transparent 1px
+            rgba(255,255,255,.22),
+
+            transparent 42%
+
+        ),
+
+        radial-gradient(
+
+            circle at 15% 35%,
+
+            rgba(255,255,255,.10),
+
+            transparent 28%
+
+        ),
+
+        radial-gradient(
+
+            circle at 85% 70%,
+
+            rgba(255,255,255,.08),
+
+            transparent 26%
 
         );
 
-    background-size:
+    mix-blend-mode:soft-light;
 
-        34px 34px;
-
-    z-index:0;
+    z-index:1;
 
 }
 
@@ -1291,6 +1295,75 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
 }
 
+.leafDecor{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+
+.leafDecor img{
+
+    position:absolute;
+
+    opacity:.06;
+
+    user-select:none;
+
+}
 
 
+.leaf1{
+
+    width:180px;
+
+    top:30px;
+
+    left:30px;
+
+    transform:rotate(-18deg);
+
+}
+
+.leaf2{
+
+    width:230px;
+
+    top:120px;
+
+    right:40px;
+
+    transform:rotate(28deg);
+
+}
+
+
+.leaf3{
+
+    width:200px;
+
+    bottom:80px;
+
+    left:80px;
+
+    transform:rotate(15deg);
+
+}
+
+.leaf4{
+
+    width:260px;
+
+    bottom:40px;
+
+    right:60px;
+
+    transform:rotate(-25deg);
+
+}
 

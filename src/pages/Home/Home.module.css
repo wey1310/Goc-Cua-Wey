@@ -484,10 +484,6 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     animation:cardAppear .7s ease;
 
-    box-shadow:
-
-        0 6px 18px rgba(0,0,0,.12);
-
     transition:
 
         transform .35s cubic-bezier(.2,.8,.2,1),
@@ -495,6 +491,44 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
         filter .35s,
 
         box-shadow .35s;
+
+}
+
+.characterCard::before{
+
+    content:"🍵";
+
+    position:absolute;
+
+    top:-14px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:34px;
+
+    height:34px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:18px;
+
+    background:#F8FBF2;
+
+    border:2px solid rgba(132,167,92,.35);
+
+    border-radius:50%;
+
+    box-shadow:
+
+        0 4px 10px rgba(0,0,0,.08);
+
+    z-index:20;
 
 }
 
@@ -544,13 +578,17 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
     position:absolute;
 
-    inset:0;
+    inset:-10px;
 
-    border-radius:24px;
+    border:2px solid rgba(132,167,92,.22);
+
+    border-radius:28px;
 
     pointer-events:none;
 
     transition:
+
+        border-color .3s,
 
         box-shadow .3s;
 
@@ -558,9 +596,11 @@ drop-shadow(0 0 8px rgba(255,245,180,.4));
 
 .characterCard:hover::after{
 
+    border-color:rgba(132,167,92,.55);
+
     box-shadow:
 
-        0 0 35px rgba(255,255,210,.45);
+        0 0 18px rgba(132,167,92,.18);
 
 }
 

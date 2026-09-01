@@ -102,10 +102,10 @@ export const DEFAULT_MUSIC_TRACKS = [
 
     {
         id: "music-03",
-        title: "Nhớ nhưng đến phát điên",
+        title: "Nhớ nhung đến phát điên",
         artist: "Cửa hàng tiện lợi Nhĩ Đóa",
         url: nhoDenPhatDienMusic,
-        fileName: "Nhớ nhưng đến phát điên - Cửa hàng tiện lợi Nhĩ Đóa.mp3",
+        fileName: "Nhớ nhung đến phát điên - Cửa hàng tiện lợi Nhĩ Đóa.mp3",
         description: "",
         active: true,
         order: 3,
@@ -144,7 +144,7 @@ export const DEFAULT_MUSIC_TRACKS = [
         title: "Mashup HIT Tiktok Trung Douyin 2020",
         artist: "Nhiều nghệ sĩ",
         url: mashupDouyinMusic,
-        fileName: "Mashup HIT Tiktok Trung Douyin 2020.mp3",
+        fileName: "Mashup HIT Tiktok Trung  Douyin 2020.mp3",
         description: "",
         active: true,
         order: 6,

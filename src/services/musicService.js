@@ -103,8 +103,8 @@ export const DEFAULT_MUSIC_TRACKS = [
     {
         id: "music-06",
         title: "Mashup HIT Tiktok Trung Douyin 2020",
-        fileName: "Mashup HIT Tiktok Trung Douyin 2020.mp3",
-        url: "/assets/music/Mashup HIT Tiktok Trung Douyin 2020.mp3",
+        fileName: "Mashup HIT Tiktok Trung  Douyin 2020.mp3",
+        url: "/assets/music/Mashup HIT Tiktok Trung  Douyin 2020.mp3",
         description: "",
         artist: "Nhiều nghệ sĩ",
         active: true,

@@ -64,14 +64,14 @@ import bgMusic from "../../assets/music/garden.mp3";
 
 import randomSound from "../../assets/music/randomsound.mp3";
 
-import gardenMusic from "../assets/music/garden.mp3";
-import choHoaKhoHeoMusic from "../assets/music/Đợi Hoa Khô Héo Rồi Mới Tưới Nước - Cửa Hàng Tiện Lợi Nhĩ Đóa.mp3";
-import muaLaPhaoHoaMusic from "../assets/music/Mưa Là Pháo Hoa Của Thần Linh - Nyxx.mp3";
-import nhoDenPhatDienMusic from "../assets/music/Nhớ nhưng đến phát điên - Cửa hàng tiện lợi Nhĩ Đóa.mp3";
-import chuaBaoGioMusic from "../assets/music/Chưa Bao Giờ - Chi Pu.mp3";
-import gimmeDatLoveMusic from "../assets/music/Gimme Dat Love - i-dle.mp3";
-import mashupDouyinMusic from "../assets/music/Mashup HIT Tiktok Trung Douyin 2020.mp3";
-import sakuraMusic from "../assets/music/Sakura - Ikimonogakari.mp3";
+import gardenMusic from "../../assets/music/garden.mp3";
+import choHoaKhoHeoMusic from "../../assets/music/Đợi Hoa Khô Héo Rồi Mới Tưới Nước - Cửa Hàng Tiện Lợi Nhĩ Đóa.mp3";
+import muaLaPhaoHoaMusic from "../../assets/music/Mưa Là Pháo Hoa Của Thần Linh - Nyxx.mp3";
+import nhoDenPhatDienMusic from "../../assets/music/Nhớ nhưng đến phát điên - Cửa hàng tiện lợi Nhĩ Đóa.mp3";
+import chuaBaoGioMusic from "../../assets/music/Chưa Bao Giờ - Chi Pu.mp3";
+import gimmeDatLoveMusic from "../../assets/music/Gimme Dat Love - i-dle.mp3";
+import mashupDouyinMusic from "../../assets/music/Mashup HIT Tiktok Trung Douyin 2020.mp3";
+import sakuraMusic from "../../assets/music/Sakura - Ikimonogakari.mp3";
 
 export const DEFAULT_MUSIC_TRACKS = [
     {
@@ -248,7 +248,7 @@ function Landing() {
 
         {
 
-            src: bgMusic,
+            src: bgMusic, choHoaKhoHeoMusic, muaLaPhaoHoaMusic, nhoDenPhatDienMusic, chuaBaoGioMusic, gimmeDatLoveMusic, mashupDouyinMusic, sakuraMusic, gardenMusic,
 
             type: "audio"
 

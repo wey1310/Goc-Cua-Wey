@@ -64,7 +64,120 @@ import bgMusic from "../../assets/music/garden.mp3";
 
 import randomSound from "../../assets/music/randomsound.mp3";
 
+import gardenMusic from "../assets/music/garden.mp3";
+import choHoaKhoHeoMusic from "../assets/music/Đợi Hoa Khô Héo Rồi Mới Tưới Nước - Cửa Hàng Tiện Lợi Nhĩ Đóa.mp3";
+import muaLaPhaoHoaMusic from "../assets/music/Mưa Là Pháo Hoa Của Thần Linh - Nyxx.mp3";
+import nhoDenPhatDienMusic from "../assets/music/Nhớ nhưng đến phát điên - Cửa hàng tiện lợi Nhĩ Đóa.mp3";
+import chuaBaoGioMusic from "../assets/music/Chưa Bao Giờ - Chi Pu.mp3";
+import gimmeDatLoveMusic from "../assets/music/Gimme Dat Love - i-dle.mp3";
+import mashupDouyinMusic from "../assets/music/Mashup HIT Tiktok Trung Douyin 2020.mp3";
+import sakuraMusic from "../assets/music/Sakura - Ikimonogakari.mp3";
 
+export const DEFAULT_MUSIC_TRACKS = [
+    {
+        id: "music-01",
+        title: "Đợi Hoa Khô Héo Rồi Mới Tưới Nước",
+        artist: "Cửa Hàng Tiện Lợi Nhĩ Đóa",
+        url: choHoaKhoHeoMusic,
+        fileName: "Đợi Hoa Khô Héo Rồi Mới Tưới Nước - Cửa Hàng Tiện Lợi Nhĩ Đóa.mp3",
+        description: "",
+        active: true,
+        order: 1,
+        duration: "03:16",
+        playCount: 0
+    },
+
+    {
+        id: "music-02",
+        title: "Mưa Là Pháo Hoa Của Thần Linh",
+        artist: "Nyxx",
+        url: muaLaPhaoHoaMusic,
+        fileName: "Mưa Là Pháo Hoa Của Thần Linh - Nyxx.mp3",
+        description: "",
+        active: true,
+        order: 2,
+        duration: "03:17",
+        playCount: 0
+    },
+
+    {
+        id: "music-03",
+        title: "Nhớ nhưng đến phát điên",
+        artist: "Cửa hàng tiện lợi Nhĩ Đóa",
+        url: nhoDenPhatDienMusic,
+        fileName: "Nhớ nhưng đến phát điên - Cửa hàng tiện lợi Nhĩ Đóa.mp3",
+        description: "",
+        active: true,
+        order: 3,
+        duration: "02:37",
+        playCount: 0
+    },
+
+    {
+        id: "music-04",
+        title: "Chưa Bao Giờ",
+        artist: "Chi Pu",
+        url: chuaBaoGioMusic,
+        fileName: "Chưa Bao Giờ - Chi Pu.mp3",
+        description: "",
+        active: true,
+        order: 4,
+        duration: "04:26",
+        playCount: 0
+    },
+
+    {
+        id: "music-05",
+        title: "Gimme Dat Love",
+        artist: "i-dle",
+        url: gimmeDatLoveMusic,
+        fileName: "Gimme Dat Love - i-dle.mp3",
+        description: "",
+        active: true,
+        order: 5,
+        duration: "02:46",
+        playCount: 0
+    },
+
+    {
+        id: "music-06",
+        title: "Mashup HIT Tiktok Trung Douyin 2020",
+        artist: "Nhiều nghệ sĩ",
+        url: mashupDouyinMusic,
+        fileName: "Mashup HIT Tiktok Trung Douyin 2020.mp3",
+        description: "",
+        active: true,
+        order: 6,
+        duration: "03:51",
+        playCount: 0
+    },
+
+    {
+        id: "music-07",
+        title: "Sakura",
+        artist: "Ikimonogakari",
+        url: sakuraMusic,
+        fileName: "Sakura - Ikimonogakari.mp3",
+        description: "",
+        active: true,
+        order: 7,
+        duration: "05:57",
+        playCount: 0
+    },
+
+    {
+        id: "music-08",
+        title: "Garden",
+        artist: "Minnie ((G)I-DLE)",
+        url: gardenMusic,
+        fileName: "garden.mp3",
+        description: "Nhạc nền mặc định của Khu Vườn.",
+        active: true,
+        order: 8,
+        duration: "07:36",
+        playCount: 0
+    }
+];
 
 function Landing() {
 

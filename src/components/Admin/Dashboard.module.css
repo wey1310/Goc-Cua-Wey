@@ -1,0 +1,377 @@
+/* =====================================================
+   DASHBOARD ROOT
+===================================================== */
+
+.dashboardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+/* =====================================================
+   STAT CARDS GRID (7 CARDS)
+===================================================== */
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+.statCard {
+    position: relative;
+    padding: 20px 18px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 24px rgba(6, 78, 59, 0.07);
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.statCard:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 12px 30px rgba(6, 78, 59, 0.15);
+    border-color: rgba(16, 185, 129, 0.4);
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.cardIcon {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.cardArrow {
+    font-size: 13px;
+    color: #059669;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all 0.2s ease;
+    font-weight: 700;
+}
+
+.statCard:hover .cardArrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.cardValue {
+    font-size: clamp(26px, 2.8vw, 34px);
+    font-weight: 800;
+    color: #064e3b;
+    line-height: 1.1;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+}
+
+.cardLabel {
+    font-size: 13px;
+    font-weight: 600;
+    color: #047857;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* =====================================================
+   HIGHLIGHTS SECTION (4 CARDS)
+===================================================== */
+
+.highlightsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+}
+
+.highlightCard {
+    padding: 22px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow: 0 10px 28px rgba(6, 78, 59, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.highlightTitle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #064e3b;
+    margin: 0;
+}
+
+.highlightContent {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(209, 250, 229, 0.8);
+}
+
+.highlightAvatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    object-fit: cover;
+    border: 2px solid #34d399;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    background: #e6f4ea;
+}
+
+.highlightInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.highlightName {
+    font-size: 16px;
+    font-weight: 700;
+    color: #064e3b;
+    margin: 0 0 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.highlightStat {
+    font-size: 13px;
+    color: #059669;
+    font-weight: 600;
+    margin: 0;
+}
+
+.tagRow {
+    display: flex;
+    gap: 5px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+}
+
+.tagChip {
+    font-size: 11px;
+    padding: 2px 8px;
+    background: rgba(5, 150, 105, 0.12);
+    color: #065f46;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* Feedback Highlight */
+.feedbackSnippet {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 16px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid rgba(254, 215, 170, 0.6);
+}
+
+.feedbackHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.feedbackAuthor {
+    font-size: 14px;
+    font-weight: 700;
+    color: #9a3412;
+}
+
+.feedbackTarget {
+    font-size: 12px;
+    color: #c2410c;
+    background: #ffedd5;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.feedbackText {
+    font-size: 13.5px;
+    color: #431407;
+    margin: 0;
+    line-height: 1.45;
+    font-style: italic;
+}
+
+/* Music Highlight */
+.musicSnippet {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 16px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border: 1px solid rgba(199, 210, 254, 0.6);
+}
+
+.musicDisc {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}
+
+.musicInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.musicTitle {
+    font-size: 15px;
+    font-weight: 700;
+    color: #312e81;
+    margin: 0 0 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.musicStats {
+    font-size: 12px;
+    color: #4f46e5;
+    margin: 0;
+}
+
+/* =====================================================
+   RECENT ACTIVITIES STREAM
+===================================================== */
+
+.activitySection {
+    padding: 22px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow: 0 10px 28px rgba(6, 78, 59, 0.08);
+}
+
+.activityHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.activityHeader h3 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: #064e3b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.viewAllBtn {
+    border: none;
+    background: none;
+    color: #059669;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.viewAllBtn:hover {
+    color: #047857;
+    text-decoration: underline;
+}
+
+.activityList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.activityItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(209, 250, 229, 0.6);
+    transition: all 0.2s ease;
+}
+
+.activityItem:hover {
+    background: #ffffff;
+    transform: translateX(4px);
+}
+
+.activityIcon {
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.activityBody {
+    flex: 1;
+    min-width: 0;
+}
+
+.activityTitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #064e3b;
+    margin: 0 0 2px;
+}
+
+.activityMessage {
+    font-size: 13px;
+    color: #047857;
+    margin: 0;
+}
+
+.activityTime {
+    font-size: 11.5px;
+    color: #6ee7b7;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.emptyBox {
+    text-align: center;
+    padding: 30px;
+    color: #059669;
+    font-size: 14px;
+}

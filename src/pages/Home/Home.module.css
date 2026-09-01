@@ -1,0 +1,1584 @@
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    background:url("/assets/background/home-bg.webp");
+
+    background-repeat:no-repeat;
+
+    background-position:center center;
+
+    background-size:cover;
+
+    background-attachment:fixed;
+
+    animation:
+
+        pageFade .6s cubic-bezier(.2,.8,.2,1);
+
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.heading{
+
+    display:block;
+
+    width:clamp(320px,42vw,650px);
+
+    margin:0 auto;
+
+    margin-top:-20px;
+
+    transform-origin:center top;
+
+    animation:boardSwing 5s ease-in-out infinite;
+
+    filter:drop-shadow(0 10px 18px rgba(0,0,0,.18));
+
+}
+
+@keyframes boardSwing{
+
+    0%{
+        transform:rotate(-1.5deg);
+    }
+
+    50%{
+        transform:rotate(1.5deg);
+    }
+
+    100%{
+        transform:rotate(-1.5deg);
+    }
+
+}
+
+
+/* =====================================================
+   GARDEN STATUS BAR & DAILY QUOTE
+===================================================== */
+
+.gardenStatusBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: -10px auto 14px;
+    padding: 6px 18px;
+    width: fit-content;
+    max-width: 90%;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 30px;
+    border: 1px solid rgba(144, 177, 107, 0.35);
+    box-shadow: 0 4px 12px rgba(35, 45, 25, 0.06);
+    flex-wrap: wrap;
+}
+
+.gardenStatusItem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #4b5a3b;
+    font-weight: 500;
+}
+
+.gardenStatusItem strong {
+    color: #2e441c;
+    font-weight: 700;
+}
+
+.gardenStatusDot {
+    color: #a4b396;
+    font-size: 11px;
+}
+
+.gardenStatusMusicPill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #eef6e8;
+    border: 1px solid rgba(144, 177, 107, 0.4);
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #3b5228;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.gardenStatusMusicPill:hover {
+    background: #e1edd8;
+    transform: scale(1.03);
+}
+
+.musicTitleText {
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.musicNotePlaying {
+    display: inline-block;
+    animation: musicPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes musicPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.25) rotate(8deg); }
+}
+
+/* Daily Quote Card */
+.dailyQuoteCard {
+    width: min(90%, 640px);
+    margin: 18px auto 0;
+    padding: 14px 22px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(255, 253, 248, 0.88) 0%, rgba(247, 243, 233, 0.88) 100%);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(144, 177, 107, 0.3);
+    box-shadow: 0 6px 18px rgba(35, 45, 25, 0.06);
+    text-align: center;
+    animation: cardAppear 0.8s ease;
+}
+
+.dailyQuoteHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #556c40;
+    border-bottom: 1px dashed rgba(144, 177, 107, 0.25);
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+}
+
+.dailyQuoteDate {
+    font-weight: 500;
+    color: #8c8476;
+    font-size: 11.5px;
+    text-transform: capitalize;
+}
+
+.dailyQuoteText {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    font-style: italic;
+    color: #3f4b33;
+    font-weight: 500;
+}
+
+.dailyQuoteAuthor {
+    margin-top: 6px;
+    font-size: 11.5px;
+    color: #7a866d;
+    font-weight: 600;
+    text-align: right;
+}
+
+/* =====================================================
+   FILTER CONTROLS & TABS
+===================================================== */
+
+/* =====================================================
+   RECENTLY VIEWED
+===================================================== */
+
+.recentlyViewedContainer {
+    width: min(92%, 1020px);
+    margin: 18px auto 0;
+    padding: 12px 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(144, 177, 107, 0.25);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.recentlyViewedHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recentlyViewedTitle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #435433;
+}
+
+.clearRecentBtn {
+    background: none;
+    border: none;
+    font-size: 11.5px;
+    color: #928b7e;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.clearRecentBtn:hover {
+    color: #b05c5c;
+    text-decoration: underline;
+}
+
+.recentCardsScroll {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.recentCardsScroll::-webkit-scrollbar {
+    height: 4px;
+}
+
+.recentCardsScroll::-webkit-scrollbar-thumb {
+    background: #d4ccbd;
+    border-radius: 10px;
+}
+
+.recentCardPill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px 4px 5px;
+    border-radius: 20px;
+    background: #fbf9f4;
+    border: 1px solid rgba(144, 177, 107, 0.3);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.recentCardPill:hover {
+    background: #eef6e8;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(110, 143, 73, 0.15);
+}
+
+.recentAvatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #d4e3c5;
+}
+
+.recentName {
+    font-size: 12px;
+    font-weight: 600;
+    color: #3b472e;
+    white-space: nowrap;
+}
+
+/* =====================================================
+   CARD QUICK ACTIONS & FAVORITES
+===================================================== */
+
+.favoriteButton {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(45, 58, 30, 0.45);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: all 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.favoriteButton:hover {
+    transform: scale(1.15);
+    background: rgba(45, 58, 30, 0.7);
+}
+
+.favorited {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-color: #ff809b !important;
+    box-shadow: 0 4px 12px rgba(255, 77, 109, 0.35);
+}
+
+.cardBottomBar {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 82%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 4;
+}
+
+.cardStatItem {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #e5ecd3;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.cardFeedbackBtn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #f7faf0;
+    font-size: 10.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cardFeedbackBtn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* =====================================================
+   EMPTY SEARCH STATE
+===================================================== */
+
+.emptyResultsState {
+    width: min(90%, 540px);
+    margin: 50px auto 90px;
+    padding: 36px 24px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(144, 177, 107, 0.35);
+    box-shadow: 0 10px 30px rgba(35, 45, 25, 0.08);
+    text-align: center;
+    animation: cardAppear 0.6s ease;
+}
+
+.emptyCupGraphic {
+    font-size: 42px;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 6px 12px rgba(110, 143, 73, 0.2));
+}
+
+.emptyResultsState h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #405230;
+}
+
+.emptyResultsState p {
+    margin: 8px 0 18px;
+    font-size: 13.5px;
+    color: #777164;
+    line-height: 1.5;
+}
+
+.resetFilterBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 40px;
+    padding: 0 18px;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(135deg, #7c9d52 0%, #63843e 100%);
+    color: #ffffff;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(99, 132, 62, 0.25);
+    transition: all 0.2s ease;
+}
+
+.resetFilterBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(99, 132, 62, 0.32);
+}
+
+/* =====================================================
+   COUNTER
+===================================================== */
+
+.counterWrapper{
+
+    position:relative;
+
+    width:clamp(320px,40vw,470px);
+
+    margin:10px auto 0;
+
+    transition:
+
+        transform .3s;
+
+}
+
+
+.counterBoard{
+
+    width:100%;
+
+    display:block;
+
+    filter:drop-shadow(0 8px 18px rgba(0,0,0,.18));
+
+}
+
+.counterItem1,
+.counterItem2,
+.counterItem3{
+
+    position:absolute;
+
+    top:24%;
+
+    width:24%;
+
+    text-align:center;
+
+}
+
+.counterItem1{
+
+    left:7%;
+
+}
+
+.counterItem2{
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+.counterItem3{
+
+    right:7%;
+
+}
+
+.counterWrapper h2{
+
+    margin:0;
+
+    font-size:clamp(20px,2.2vw,34px);
+
+    font-weight:700;
+
+    color:#53683d;
+
+    line-height:1;
+
+}
+
+.counterWrapper p{
+
+    margin-top:4%;
+
+    font-size:clamp(10px,.95vw,15px);
+
+    line-height:1.25;
+
+    color:#556847;
+
+}
+
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.searchArea{
+
+    position:relative;
+
+    width:min(90%,760px);
+
+    margin:42px auto 0;
+
+    transition:
+
+        transform .3s,
+
+        filter .3s;
+
+}
+
+.searchBox{
+
+    width:100%;
+
+    display:block;
+
+    filter:drop-shadow(0 6px 12px rgba(0,0,0,.15));
+
+}
+
+.searchIcon{
+
+    position:absolute;
+
+    left:30px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:30px;
+
+}
+
+
+
+.searchInput{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    padding-left:60px;
+
+    padding-right:30px;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    color:#54673e;
+
+}
+
+.searchInput::placeholder{
+
+    color:#94a07d;
+
+}
+
+.searchArea:hover{
+
+    transform:scale(1.01);
+
+}
+
+/* =====================================================
+   TAG
+===================================================== */
+
+.tagContainer{
+
+    width:min(95%,1250px);
+
+    margin:10px auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    column-gap:10px;
+
+    row-gap:0;
+
+}
+
+.tag,
+.activeTag{
+
+    position:relative;
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    animation:tagGlow 2s infinite;
+
+}
+
+@keyframes tagGlow{
+
+0%{
+
+filter:
+
+drop-shadow(0 0 8px rgba(255,245,180,.4));
+
+}
+
+50%{
+
+filter:
+
+drop-shadow(0 0 20px rgba(185, 255, 180, 0.9));
+
+}
+
+100%{
+
+filter:
+
+drop-shadow(0 0 8px rgba(255,245,180,.4));
+
+}
+
+}
+
+.tag img,
+.activeTag img{
+
+    width:clamp(115px,10vw,145px);
+
+    filter:drop-shadow(0 4px 8px rgba(255, 255, 255, 0.18));
+
+}
+
+.tag span,
+.activeTag span{
+
+    position:absolute;
+
+    left:52%;
+
+    top:40%;
+
+    transform:translate(-50%,-50%);
+
+    white-space:nowrap;
+
+    font-size:13px;
+
+    font-family: 'nunito', sans-serif;
+
+    font-weight:600;
+
+    color:#fcfafb;
+
+}
+
+
+.activeTag{
+
+    transform:translateY(-5px);
+
+    filter:drop-shadow(0 0 18px rgb(175, 255, 193));
+
+}
+
+
+/* =====================================================
+   CHARACTER GRID
+===================================================== */
+
+.characterGrid{
+
+    width:min(95%,1320px);
+
+    margin:45px auto 80px;
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(
+
+            auto-fit,
+
+            minmax(220px,220px)
+
+        );
+
+    justify-content:center;
+
+    align-items:start;
+
+    gap:34px;
+
+}
+
+/* =====================================================
+   CHARACTER CARD
+===================================================== */
+
+.characterCard{
+
+    position:relative;
+
+    width:clamp(175px,17vw,225px);
+
+    cursor:pointer;
+
+    animation:cardAppear .7s ease;
+
+    transition:
+
+        transform .35s cubic-bezier(.2,.8,.2,1),
+
+        filter .35s,
+
+        box-shadow .35s;
+
+}
+
+
+
+@keyframes cardAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   LEAF CARD
+===================================================== */
+
+.leafCard{
+
+    width:100%;
+
+    display:block;
+
+    animation:leafSwing 5s ease-in-out infinite;
+
+    transition:
+
+        transform .35s,
+
+        filter .35s;
+
+}
+
+
+@keyframes leafSwing{
+
+    0%{
+
+        transform:rotate(-2deg);
+
+    }
+
+    50%{
+
+        transform:rotate(2deg);
+
+    }
+
+    100%{
+
+        transform:rotate(-2deg);
+
+    }
+
+}
+
+.characterCard:hover .leafCard{
+
+    filter:
+
+        brightness(1.08)
+
+        drop-shadow(
+
+            0 0 18px
+
+            rgba(255,255,180,.75)
+
+        );
+
+}
+
+/* =====================================================
+   AVATAR
+===================================================== */
+
+.avatar{
+
+    position:absolute;
+
+    left:50%;
+
+    top:26px;
+
+    width:100px;
+
+    height:100px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    transform:translateX(-50%);
+
+    transition:
+
+        transform .35s,
+
+        filter .35s;
+
+}
+
+
+
+/* =====================================================
+   NAME
+===================================================== */
+
+.characterCard h2{
+
+    position:absolute;
+
+    top:140px;
+
+    width:100%;
+
+    margin:0;
+
+    text-align:center;
+
+    color:#fff;
+
+    font-size:clamp(18px,1.6vw,26px);
+
+    text-shadow:
+
+        0 3px 8px rgba(0,0,0,.4);
+
+    transition:
+
+        color .3s,
+
+        transform .3s;
+
+}
+
+.characterCard:hover h2{
+
+    color:#ffaad3;
+
+}
+
+.characterCard p{
+
+    position:absolute;
+
+    top:200px;
+
+    left:50%;
+
+    width:80%;
+
+    margin:0;
+
+    text-align:center;
+
+    color:#edf3dc;
+
+    font-size:12px;
+
+    line-height:1.45;
+
+    transform:translateX(-50%);
+
+    transition:
+
+        opacity .3s;
+
+}
+
+.characterCard:hover p{
+
+    opacity:1;
+
+}
+
+
+/* =====================================================
+   MUSIC BUTTON
+===================================================== */
+
+.musicButton{
+
+    position:fixed;
+
+    right:28px;
+
+    bottom:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    z-index:999;
+
+    transition:
+
+        transform .3s;
+
+}
+
+.musicButton:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.musicButton img{
+
+    width:74px;
+
+    animation:musicFloat 4s ease-in-out infinite;
+
+    transition:
+
+        transform .3s;
+
+}
+
+.musicButton:hover img{
+
+    transform:
+
+        rotate(8deg)
+
+        scale(1.08);
+
+}
+
+.musicOff{
+
+    position:absolute;
+
+    inset:0;
+
+    mix-blend-mode:multiply;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#b13232;
+
+    font-size:34px;
+
+    font-weight:900;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,.9),
+        0 0 12px rgba(0,0,0,.35);
+
+    pointer-events:none;
+
+    user-select:none;
+
+}
+
+@keyframes musicBadge{
+
+    from{
+
+        transform:
+            scale(.3)
+            rotate(-20deg);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:
+            scale(1)
+            rotate(0);
+
+        opacity:1;
+
+    }
+
+}
+
+.musicButton:hover .musicOff{
+
+    transform:
+
+        translate(2px,-2px)
+
+        scale(1.08);
+
+}
+
+@keyframes musicFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.backButton{
+
+    position:fixed;
+
+    left:28px;
+
+    bottom:25px;
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    z-index:999;
+
+}
+
+.backButton img{
+
+    width:88px;
+
+    transition:
+
+        transform .3s;
+
+}
+
+.backButton:hover img{
+
+    transform:translateY(-6px);
+
+}
+
+
+/* =====================================================
+   PAGE ANIMATION
+===================================================== */
+
+@keyframes pageFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#edf3dc;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#90a179;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#74865d;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:1024px){
+
+    .avatar{
+
+        width:100px;
+        height:100px;
+
+    }
+
+    .characterCard h2{
+
+        top:150px;
+
+    }
+
+    .searchInput{
+
+        font-size:16px;
+
+        padding-left:62px;
+
+    }
+
+    .searchIcon{
+
+        width:24px;
+
+        left:24px;
+
+    }
+
+    .musicButton img{
+
+        width:58px;
+
+    }
+
+    .backButton img{
+
+        width:64px;
+
+    }
+
+}
+
+
+.searchArea:focus-within{
+
+    filter:
+
+        drop-shadow(
+
+            0 0 14px rgba(255,245,180,.75)
+
+        );
+
+}
+
+.searchInput:focus{
+
+    color:#345027;
+
+}
+
+
+.activeTag::after{
+
+    content:"🌸";
+
+    position:absolute;
+
+    top:17px;
+
+    right:-1px;
+
+    font-size:20px;
+
+    animation:leafFloat 1.8s infinite;
+
+}
+
+@keyframes leafFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-4px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   BROAD SECTION
+===================================================== */
+
+.broadSection{
+
+    width:min(95%,1280px);
+
+    margin:40px auto 55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    gap:clamp(20px,2vw,40px);
+
+    flex-wrap:wrap;
+
+}
+
+/* =====================================================
+   BROAD RESPONSIVE
+===================================================== */
+
+@media(max-width:1024px){
+
+    .broadSection{
+
+        gap:28px;
+
+    }
+
+}
+
+
+/* =====================================================
+    RESPONSIVE
+===================================================== */
+@media (max-width:768px){
+
+    .container{
+
+        background-attachment:auto;
+
+    }
+
+    .heading{
+        width:100%;
+
+    }
+
+    .counterWrapper{
+        width:100%;
+
+    }
+
+    .characterGrid{
+
+        width:95%;
+
+        margin:35px auto 60px;
+
+        display:grid;
+
+        grid-template-columns:
+
+            repeat(
+
+                2,
+
+                minmax(140px,170px)
+
+            );
+
+        justify-content:center;
+
+        justify-items:center;
+
+        gap:20px;
+
+    }
+
+    .characterCard{
+
+        width:100%;
+
+    }
+
+    .avatar{
+
+        width:90px;
+
+        height:90px;
+
+        top:10px;
+
+    }
+
+    .characterCard h2{
+
+        top:110px;
+
+        left:50%;
+
+        width:86%;
+
+        transform:translateX(-50%);
+
+        text-align:center;
+
+        font-size:15px;
+
+        line-height:1.15;
+
+    }
+
+    .characterCard p{
+
+        top:150px;
+
+        width:82%;
+
+        font-size:10px;
+
+        line-height:1.3;
+
+    }
+
+    .tagContainer{
+
+        gap:5px;
+
+    }
+
+    .tag img,
+    .activeTag img{
+
+        width:100px;
+
+    }
+
+    .searchArea{
+
+        width:95%;
+
+    }
+
+    .searchBox{
+
+        height:40px;
+
+        object-fit:fill;
+
+    }
+
+    .searchInput{
+
+        font-size:15px;
+
+        padding-left:40px;
+
+    }
+
+    .searchIcon{
+
+        width:30px;
+
+        left: 10px
+
+    }
+
+    .musicButton img{
+
+        width:58px;
+
+    }
+
+    .backButton img{
+
+        width:64px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .broadSection{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:30px;
+
+    }
+
+}
+
+.leafDecor{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+
+.leafDecor img{
+
+    position:absolute;
+
+    opacity:.06;
+
+    user-select:none;
+
+}
+
+
+.leaf1{
+
+    width:180px;
+
+    top:30px;
+
+    left:30px;
+
+    transform:rotate(-18deg);
+
+}
+
+.leaf2{
+
+    width:230px;
+
+    top:120px;
+
+    right:40px;
+
+    transform:rotate(28deg);
+
+}
+
+
+.leaf3{
+
+    width:200px;
+
+    bottom:80px;
+
+    left:80px;
+
+    transform:rotate(15deg);
+
+}
+
+.leaf4{
+
+    width:260px;
+
+    bottom:40px;
+
+    right:60px;
+
+    transform:rotate(-25deg);
+
+}
+

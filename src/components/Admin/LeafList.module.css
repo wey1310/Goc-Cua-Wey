@@ -1,0 +1,187 @@
+.container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    height:100%;
+
+    overflow-y:auto;
+
+    padding:12px;
+
+    scroll-behavior:smooth;
+
+}
+
+/* ================= Scroll ================= */
+
+.container::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.container::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+.container::-webkit-scrollbar-thumb{
+
+    background:#b8d59d;
+
+    border-radius:999px;
+
+}
+
+.container::-webkit-scrollbar-thumb:hover{
+
+    background:#98bc78;
+
+}
+
+/* ================= Item ================= */
+
+.item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:12px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.95);
+
+    border:1px solid rgba(117,174,89,.08);
+
+    cursor:pointer;
+
+    transition:
+        transform .22s,
+        box-shadow .22s,
+        border-color .22s;
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,.07);
+
+}
+
+.item:hover{
+
+    transform:translateY(-3px);
+
+    border-color:#a8d284;
+
+    box-shadow:
+        0 14px 28px rgba(0,0,0,.12);
+
+}
+
+.item:active{
+
+    transform:scale(.98);
+
+}
+
+/* ================= Avatar ================= */
+
+.avatar{
+
+    width:64px;
+
+    height:64px;
+
+    flex-shrink:0;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    background:#edf6e5;
+
+    border:3px solid #b5d796;
+
+    box-shadow:
+        0 0 12px rgba(116,176,90,.18);
+
+}
+
+/* ================= Info ================= */
+
+.info{
+
+    flex:1;
+
+    min-width:0;
+
+}
+
+.info h3{
+
+    margin:0;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    color:#496236;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
+.info p{
+
+    margin:5px 0;
+
+    font-size:13px;
+
+    color:#7b7b7b;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+}
+
+.info span{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:4px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    color:#79a05f;
+
+}
+
+/* ================= Mobile ================= */
+
+@media (max-width:900px){
+
+    .container{
+
+        max-height:420px;
+
+    }
+
+}

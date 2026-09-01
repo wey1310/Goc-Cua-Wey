@@ -1,0 +1,338 @@
+/* =====================================================
+   MUSIC MANAGER MODULE
+===================================================== */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow: 0 10px 28px rgba(6, 78, 59, 0.08);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.titleArea {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #064e3b;
+    margin: 0;
+}
+
+.counterBadge {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 12px;
+    background: #6366f1;
+    color: #ffffff;
+}
+
+.addBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 18px;
+    border-radius: 14px;
+    border: none;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+}
+
+.addBtn:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-1px);
+}
+
+/* Track list */
+.trackList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.trackCard {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(209, 250, 229, 0.8);
+    box-shadow: 0 4px 15px rgba(6, 78, 59, 0.05);
+    transition: all 0.2s ease;
+    flex-wrap: wrap;
+}
+
+.trackCard:hover {
+    background: #ffffff;
+    box-shadow: 0 6px 20px rgba(6, 78, 59, 0.1);
+}
+
+.orderBadge {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: #e0e7ff;
+    color: #4338ca;
+    font-weight: 800;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.trackMain {
+    flex: 1;
+    min-width: 200px;
+}
+
+.trackTitle {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #064e3b;
+    margin: 0 0 3px;
+}
+
+.trackDesc {
+    font-size: 12.5px;
+    color: #059669;
+    margin: 0;
+}
+
+.audioPlayer {
+    height: 36px;
+    max-width: 260px;
+    outline: none;
+}
+
+.trackStats {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 12.5px;
+    color: #047857;
+    font-weight: 600;
+}
+
+.activeSwitch {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 4px 10px;
+    border-radius: 12px;
+    border: none;
+    transition: all 0.15s ease;
+}
+
+.activeOn {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.activeOff {
+    background: #f3f4f6;
+    color: #9ca3af;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.actionBtn {
+    padding: 7px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(209, 250, 229, 0.6);
+    color: #065f46;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.actionBtn:hover {
+    background: #059669;
+    color: #ffffff;
+}
+
+.actionBtnDanger:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* Modal */
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1500;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modalContent {
+    width: 100%;
+    max-width: 520px;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    border: 1.5px solid rgba(16, 185, 129, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modalTitle {
+    font-size: 19px;
+    font-weight: 800;
+    color: #064e3b;
+    margin: 0;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.formLabel {
+    font-size: 13px;
+    font-weight: 700;
+    color: #065f46;
+}
+
+.formInput {
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    background: #ffffff;
+    font-size: 14px;
+    color: #064e3b;
+    outline: none;
+}
+
+.formInput:focus {
+    border-color: #059669;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.fileInputArea {
+    padding: 18px;
+    border: 2px dashed rgba(16, 185, 129, 0.4);
+    border-radius: 14px;
+    background: rgba(240, 253, 244, 0.6);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.fileInputArea:hover {
+    background: rgba(220, 252, 231, 0.8);
+    border-color: #059669;
+}
+
+.uploadProgressBar {
+    height: 8px;
+    border-radius: 4px;
+    background: #e5e7eb;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.uploadProgressFill {
+    height: 100%;
+    background: #10b981;
+    transition: width 0.3s ease;
+}
+
+.modalFooter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.cancelBtn {
+    padding: 10px 18px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4b5563;
+    cursor: pointer;
+}
+
+.submitBtn {
+    padding: 10px 22px;
+    border-radius: 12px;
+    border: none;
+    background: #059669;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+.submitBtn:hover {
+    background: #047857;
+}
+
+.empty {
+    text-align: center;
+    padding: 50px 20px;
+    color: #059669;
+}

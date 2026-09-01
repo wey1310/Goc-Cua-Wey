@@ -1,0 +1,200 @@
+.container{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:12px;
+
+    margin-top:22px;
+
+}
+
+/* ================= Buttons ================= */
+
+.container button{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    height:48px;
+
+    padding:0 16px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    transition:
+        transform .25s,
+        box-shadow .25s,
+        background .25s;
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,.08);
+
+}
+
+/* ================= Hover ================= */
+
+.container button:hover:not(:disabled){
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 14px 24px rgba(0,0,0,.15);
+
+}
+
+/* ================= Active ================= */
+
+.container button:active:not(:disabled){
+
+    transform:scale(.97);
+
+}
+
+/* ================= Disabled ================= */
+
+.container button:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+    box-shadow:none;
+
+}
+
+/* ================= Save ================= */
+
+.save{
+
+    background:#6f9950;
+
+    color:white;
+
+}
+
+.save:hover{
+
+    background:#5f8742;
+
+}
+
+/* ================= Delete ================= */
+
+.delete{
+
+    background:#d65d5d;
+
+    color:white;
+
+}
+
+.delete:hover{
+
+    background:#c94c4c;
+
+}
+
+/* ================= Duplicate ================= */
+
+.copy{
+
+    background:#eef2eb;
+
+    color:#4f5f42;
+
+}
+
+.copy:hover{
+
+    background:#dfe8d8;
+
+}
+
+/* ================= Preview ================= */
+
+.preview{
+
+    background:#5d88d6;
+
+    color:white;
+
+}
+
+.preview:hover{
+
+    background:#4b77c6;
+
+}
+
+/* ================= Loading ================= */
+
+.loading{
+
+    cursor:wait;
+
+    animation:pulse .8s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        opacity:.55;
+
+    }
+
+    100%{
+
+        opacity:1;
+
+    }
+
+}
+
+/* ================= Tablet ================= */
+
+@media (max-width:900px){
+
+    .container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* ================= Mobile ================= */
+
+@media (max-width:520px){
+
+    .container{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

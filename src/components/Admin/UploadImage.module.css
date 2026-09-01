@@ -1,0 +1,131 @@
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:20px;
+
+}
+
+/* =====================================================
+   AVATAR
+===================================================== */
+
+.avatar{
+
+    width:150px;
+
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    background:#edf7e4;
+
+    border:5px solid #d8ebc8;
+
+    box-shadow:
+        0 0 22px rgba(118,176,91,.22);
+
+    transition:
+        transform .25s,
+        box-shadow .25s;
+
+}
+
+.avatar:hover{
+
+    transform:scale(1.03);
+
+    box-shadow:
+        0 0 28px rgba(118,176,91,.35);
+
+}
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.button{
+
+    min-width:180px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#739854;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    box-shadow:
+
+        0 8px 18px rgba(0,0,0,.08);
+
+}
+
+.button:hover:not(:disabled){
+
+    background:#648747;
+
+    transform:translateY(-2px);
+
+}
+
+.button:active{
+
+    transform:scale(.98);
+
+}
+
+.button:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:768px){
+
+    .avatar{
+
+        width:120px;
+
+        height:120px;
+
+    }
+
+    .button{
+
+        width:100%;
+
+    }
+
+}

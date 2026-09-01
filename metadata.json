@@ -1,0 +1,6 @@
+{
+  "name": "Góc của Wey",
+  "description": "Khu vườn trà yên bình với bộ sưu tập các lá trà nhân vật, nhật ký hoạt động, âm nhạc thư giãn và trung tâm quản trị toàn diện.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

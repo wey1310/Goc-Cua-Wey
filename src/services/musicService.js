@@ -87,11 +87,11 @@ export const DEFAULT_MUSIC_TRACKS = [
 
     {
         id: "music-05",
-        title: "Gimme Dat Love",
+        title: "Gimme Dat Love (Eng Ver)",
         fileName: "Gimme Dat Love - i-dle.mp3",
         url: "/assets/music/Gimme Dat Love - i-dle.mp3",
         description: "",
-        artist: "i-dle",
+        artist: "(G)I-DLE",
         active: true,
         order: 5,
         duration: "02:46",
@@ -132,11 +132,11 @@ export const DEFAULT_MUSIC_TRACKS = [
 
     {
         id: "music-08",
-        title: "Garden",
+        title: "In The Novel - Midnight Sun - Haru Haru (AI Female))",
         fileName: "garden.mp3",
         url: "/assets/music/garden.mp3",
         description: "Nhạc nền mặc định của Khu Vườn.",
-        artist: "Minnie ((G)I-DLE)",
+        artist: "Minnie - AleXa - AI Make",
         active: true,
         order: 8,
         duration: "07:36",

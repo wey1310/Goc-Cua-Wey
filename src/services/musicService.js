@@ -57,9 +57,9 @@ export const DEFAULT_MUSIC_TRACKS = [
 
     {
         id: "music-03",
-        title: "Nhớ nhưng đến phát điên",
-        fileName: "Nhớ nhưng đến phát điên - Cửa hàng tiện lợi Nhĩ Đóa.mp3",
-        url: "/assets/music/Nhớ nhưng đến phát điên - Cửa hàng tiện lợi Nhĩ Đóa.mp3",
+        title: "Nhớ nhung đến phát điên",
+        fileName: "Nhớ nhung đến phát điên - Cửa hàng tiện lợi Nhĩ Đóa.mp3",
+        url: "/assets/music/Nhớ nhung đến phát điên - Cửa hàng tiện lợi Nhĩ Đóa.mp3",
         description: "",
         artist: "Cửa hàng tiện lợi Nhĩ Đóa",
         active: true,
